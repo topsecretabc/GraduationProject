@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <item
+        android:id="@+id/video_about"
+        android:title="@string/video_item_about"
+        app:showAsAction="never"  />
+    <item
+        android:id="@+id/video_setup"
+        android:title="@string/video_item_setup"
+        app:showAsAction="never"/>
+</menu>

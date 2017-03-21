@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">"graduationproject "</string>
+    <string name="login">点击登录</string>
+    <string name="setting">设置与帮助</string>
+    <string name="download">我的下载</string>
+    <string name="app_name">毒药</string>
+    <string name="video_to_main">返回</string>
+    <string name="video_item_about">关于</string>
+    <string name="video_item_setup">设置</string>
+    <string name="title_about">关于</string>
+    <string name="about_none">  </string>
+    <string name="about_staff">STAFF</string>
+    <string name="about_producer">制作</string>
+    <string name="about_producer_name">李骢</string>
+    <string name="about_supervision">监督</string>
+    <string name="about_supervision_name">罗勇</string>
+    <string name="about_particularthanks">特别感谢</string>
+    <string name="about_particularthanks_name">罗勇</string>
+    <string name="about_github">我的github(开源)</string>
+    <string name="about_github_address">https://github.com/topsecretabc</string>
+    <string name="about_mailbox">我的邮箱</string>
+    <string name="about_mailbox_address">lc670237643@163.com</string>
 </resources>
