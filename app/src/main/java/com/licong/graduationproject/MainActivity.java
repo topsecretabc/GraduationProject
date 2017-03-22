@@ -1,28 +1,46 @@
 package com.licong.graduationproject;
 
 import android.content.Intent;
+import android.media.midi.MidiInputPort;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.licong.graduationproject.adapter.MainInterface;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
+    private List<MainInterface> mainInterfacesList=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
-        //得到Toolbar的实例传入setSupportActionBar()
+        //初始化界面
+        initMainInterfaces();
+        //得到recyclerView的实例
+        RecyclerView recyclerView= (RecyclerView) findViewById(R.id.main_recycler);
+        StaggeredGridLayoutManager  layoutManager=
+             new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+
+
+                        //得到Toolbar的实例传入setSupportActionBar()
         // 既使用了Toolbar又让它外观与功能与ActionBar一致
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
         //取得DrawerLayout实例,DrawerLayout为主界面布局
-        mDrawerLayout=(DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout=(DrawerLayout) findViewById(R.id.main_layout);
         //调用getSupportActionBar()得到ActionBar实例，虽然ActionBar是由Toolbar完成的
         ActionBar actionBar=getSupportActionBar();
         //加个非空，防止出现错误
@@ -35,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setHomeAsUpIndicator(R.drawable.drawer_home);
         }
     }
+
+    private void initMainInterfaces() {
+    }
+
     //给主界面创建菜单
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main,menu);

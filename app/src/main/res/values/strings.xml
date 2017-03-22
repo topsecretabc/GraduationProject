@@ -1,7 +1,9 @@
 <resources>
+    <string name="home">首页</string>
     <string name="login">点击登录</string>
     <string name="setting">设置与帮助</string>
     <string name="download">我的下载</string>
+    <string name="search">搜索一下</string>
     <string name="app_name">毒药</string>
     <string name="video_to_main">返回</string>
     <string name="video_item_about">关于</string>
