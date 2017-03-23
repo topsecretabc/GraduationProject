@@ -5,16 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp">
-    <ImageView
-        android:id="@+id/main_interface_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"/>
     <TextView
-        android:id="@+id/main_interface_name"
+        android:id="@+id/setting_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@id/main_interface_image"
         />
 </android.support.percent.PercentRelativeLayout>

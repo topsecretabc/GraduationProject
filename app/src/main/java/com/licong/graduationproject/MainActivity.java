@@ -14,13 +14,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.licong.graduationproject.adapter.MainInterface;
+import com.licong.graduationproject.adapter.MainInterfaceAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import java.lang.String;
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
-    private List<MainInterface> mainInterfacesList=new ArrayList<>();
+    private List<MainInterface> mainInterfaceList=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -30,12 +34,15 @@ public class MainActivity extends AppCompatActivity {
         initMainInterfaces();
         //得到recyclerView的实例
         RecyclerView recyclerView= (RecyclerView) findViewById(R.id.main_recycler);
+        //第一个参数指定布局的列数，第二个指定布局的排列方向
         StaggeredGridLayoutManager  layoutManager=
              new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
+        //将mainInterface放入适配器中
+        MainInterfaceAdapter mainInterfaceAdapter=new MainInterfaceAdapter(mainInterfaceList);
+        recyclerView.setAdapter(mainInterfaceAdapter);
 
-
-                        //得到Toolbar的实例传入setSupportActionBar()
+        //得到Toolbar的实例传入setSupportActionBar()
         // 既使用了Toolbar又让它外观与功能与ActionBar一致
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
@@ -55,6 +62,47 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initMainInterfaces() {
+        for (int i=0;i<2;i++){
+            MainInterface one =
+                    new MainInterface(R.drawable.bangumi_home_ic_season_1,getRandomLengthName("asdqwdqwvq"));
+            mainInterfaceList.add(one);
+            MainInterface one1 =
+                    new MainInterface(R.drawable.bangumi_home_ic_season_2,getRandomLengthName("asdqfvq"));
+            mainInterfaceList.add(one1);
+            MainInterface one2 =
+                    new MainInterface(R.drawable.bangumi_home_ic_season_3,getRandomLengthName("adgfasfvq"));
+            mainInterfaceList.add(one2);
+            MainInterface one3 =
+                    new MainInterface(R.drawable.bangumi_home_ic_season_4,getRandomLengthName("gfvq"));
+            mainInterfaceList.add(one3);
+            MainInterface one4 =
+                    new MainInterface(R.drawable.ic_bangumi_follow,getRandomLengthName("hrthqwvq"));
+            mainInterfaceList.add(one4);
+            MainInterface one5 =
+                    new MainInterface(R.drawable.ic_bangumi_followed,getRandomLengthName("fxvdqwvq"));
+            mainInterfaceList.add(one5);
+            MainInterface one6 =
+                    new MainInterface(R.drawable.ic_btn_game,getRandomLengthName("uiuyqwdqwvq"));
+            mainInterfaceList.add(one6);
+            MainInterface one7 =
+                    new MainInterface(R.drawable.ic_btn_rank_original,getRandomLengthName("ilqwvq"));
+            mainInterfaceList.add(one7);
+            MainInterface one8 =
+                    new MainInterface(R.drawable.ic_category_live,getRandomLengthName("rytdqwdqwvq"));
+            mainInterfaceList.add(one8);
+            MainInterface one9 =
+                    new MainInterface(R.drawable.ic_category_t15,getRandomLengthName("kuikjrtbqwdqwvq"));
+            mainInterfaceList.add(one9);
+        }
+    }
+    private String  getRandomLengthName(String name){
+        Random random=new Random();
+        int length=random.nextInt(12)+1;
+        StringBuilder builder=new StringBuilder();
+        for (int i=0;i<length;i++){
+            builder.append(name);
+        }
+        return builder.toString();
     }
 
     //给主界面创建菜单
@@ -69,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent_to_video=new Intent(MainActivity.this,VideoActivity.class);
                 startActivity(intent_to_video);
                 break;
+
             //打开侧滑框
             //homeAsUp按钮id永远是android.R.id.home
             //openDrawer()将侧滑菜单展示出来，要求传入一个Gracity参数，这里传入了START

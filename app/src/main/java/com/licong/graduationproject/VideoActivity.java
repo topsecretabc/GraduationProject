@@ -89,6 +89,11 @@ public class  VideoActivity extends AppCompatActivity {
             case android.R.id.home:
                 finish();
                 break;
+            case R.id.video_setup:
+                Intent intent_video_setting=new Intent(VideoActivity.this,SettingActivity.class);
+                startActivity(intent_video_setting);
+                break;
+
         }
         return true;
     }
