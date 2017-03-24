@@ -5,14 +5,13 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.licong.graduationproject.adapter.Review;
-import com.licong.graduationproject.adapter.ReviewAdapter;
 import com.licong.graduationproject.adapter.Setting;
 import com.licong.graduationproject.adapter.SettingAdapter;
 
@@ -23,28 +22,28 @@ import java.util.List;
  * Created by licong on 3/23/17.
  * 需要加入设置有：1.清晰度选择 2.播放完成后 3.解码设置 4.弹幕设置
  *               5.离线设置 6.不接受推送消息 7.禁用启动动画 8.清空缓存
- *               9.恢复初始设置  10.帮助（里面是 1.关于 2.联系我）
+ *               9.恢复初始设置  10.联系我）
  */
 
 public class SettingActivity extends AppCompatActivity {
 
     //构建一个listview需要传入数据的对象
-    private String[] item = {"清晰度选择" ,"播放完成后","解码设置", "弹幕设置" ,
-                             "离线设置", "不接受推送消息", "禁用启动动画",
-                             "清空缓存","恢复初始设置","帮助"};
+
+
     private List<Setting> SettingList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setting_layout);
-        //创建SettingAdapter对象，作为适配器传给ListView
-        SettingAdapter settingAdapter= new SettingAdapter
-                (SettingActivity.this, R.layout.setting_item, SettingList);
+        initSetting();//初始化设置的项目
+        SettingAdapter settingAdapter=
+                new SettingAdapter(SettingActivity.this,R.layout.setting_item,SettingList);
+        ListView listView=(ListView)findViewById(R.id.setting_listview);
+        listView.setAdapter(settingAdapter);
         //得到Toolbar的实例传入setSupportActionBar()
         // 既使用了Toolbar有让它外观与功能与ActionBar一致
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_video);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_setting);
         setSupportActionBar(toolbar);
         //调用getSupportActionBar()得到ActionBar实例，虽然ActionBar是由Toolbar完成的
         ActionBar actionBar = getSupportActionBar();
@@ -57,18 +56,44 @@ public class SettingActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.back_black);
         }
-        //ArrayAdapter通过泛型来指定要适配的数据类型，提供多个构造函数重载
-        //此处ArrayAdapter（当前上下文，ListView子项布局，适配的数据）
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>
-                (SettingActivity.this, android.R.layout.simple_list_item_1, item);
-        ListView listView = (ListView) findViewById(R.id.setting_recyclerview);
-        listView.setAdapter(adapter);
     }
-
-    private void initItem(String item){
-        new Setting(item);
-        SettingList.add();
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_setting,menu);
+        return true;
     }
-
-
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                break;
+            case R.id.setting_home:
+                Intent intent_setting_home=
+                        new Intent(SettingActivity.this,MainActivity.class);
+                startActivity(intent_setting_home);
+                break;
+        }
+        return true;
+    }
+    private void initSetting() {
+        Setting Clarity = new Setting("清晰度选择",R.drawable.bangumi_timeline_weekday_7);
+        SettingList.add(Clarity);
+        Setting Play_done = new Setting("播放完成后动作",R.drawable.bangumi_timeline_weekday_1);
+        SettingList.add(Play_done);
+        Setting Decode = new Setting("解码设置",R.drawable.bangumi_timeline_weekday_2);
+        SettingList.add(Decode);
+        Setting Barrage = new Setting("弹幕设置",R.drawable.bangumi_timeline_weekday_3);
+        SettingList.add(Barrage);
+        Setting Offline = new Setting("离线设置",R.drawable.bangumi_timeline_weekday_4);
+        SettingList.add(Offline);
+        Setting Push_the_message = new Setting("不接受推送消息",R.drawable.bangumi_timeline_weekday_5);
+        SettingList.add(Push_the_message);
+        Setting Start_the_animation = new Setting("禁用启动动画",R.drawable.bangumi_home_ic_season_2);
+        SettingList.add(Start_the_animation);
+        Setting Cache = new Setting("清空缓存",R.drawable.bangumi_home_ic_season_3);
+        SettingList.add(Cache);
+        Setting default_setting = new Setting("恢复初始设置",R.drawable.bangumi_home_ic_season_4);
+        SettingList.add(default_setting);
+        Setting contact = new Setting("联系我",R.drawable.bangumi_home_ic_season_1);
+        SettingList.add(contact);
+    }
 }

@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             // 实际上Toolbar最左侧的按钮就叫HomeAsUp，
             // 默认是一个返回的箭头，但我还是换成了drawer_home
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.drawer_home);
+            actionBar.setHomeAsUpIndicator(R.drawable.main_drawer);
         }
     }
 

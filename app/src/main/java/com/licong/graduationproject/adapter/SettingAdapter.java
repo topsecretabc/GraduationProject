@@ -1,9 +1,10 @@
 package com.licong.graduationproject.adapter;
 
-import android.support.v7.widget.RecyclerView;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,50 +12,33 @@ import com.licong.graduationproject.R;
 
 import java.util.List;
 
+
 /**
  * Created by licong on 3/22/17.
- */
+ * 这是设置的适配器
+ **/
 
-public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.ViewHolder>{
+public class SettingAdapter extends ArrayAdapter<Setting> {
 
-    private List<Setting> SettingList;
-    //定义一个内部类ViewHolder，继承RecyclerView.ViewHolder
-    static  class  ViewHolder extends  RecyclerView.ViewHolder{
-        TextView item;
-        //super()里面传入View参数，通常就是RecyclerView子项的最外层布局
-        //findViewId传入子项布局
-        public ViewHolder(View view){
-            super(view);
-            item=(TextView) view
-                    .findViewById(R.id.setting_item);
-        }
+    private  int resourceId;
+    //重写父类构造函数分别传入上下文（即context），ListView子项布局id，数据
+    public SettingAdapter
+    (Context context, int textViewResourceId, List<Setting> objects){
+        super(context,textViewResourceId,objects);
+        resourceId=textViewResourceId;
     }
-    //构造函数，把要展示的数据源传进来，赋值给mainInterfaceList
-    public SettingAdapter(List<Setting> SettingList){
-        this.SettingList=SettingList;
-    }
-    //下面3个方法是必须重写的，因为是继承自RecyclerView.Adapter
-    //所以要进行抽象方法的重写，onCreateViewHolder()用于创建ViewHolder实例
-    //并把加载出来的布局传入构造函数中
+    //重写getView方法，这个方法在子项被滚动到屏幕内都会被调用
+    //getItem()方法得到当前项的实例，然后使用LayoutInflater来为这个子项加载传入的布局
+    //LayoutInflater的inflate()方法接受3个参数，最后一个指成false。
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view=LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.setting_item,parent,false);
-        ViewHolder holder=new ViewHolder(view);
-        return holder;
-    }
-    //告诉recyclerView有多少子项，返回长度
-    @Override
-    public int getItemCount() {
-        return SettingList.size();
-    }
-    //onBindViewHolder()方法用于对RecyclerView子项的数据进行赋值
-    //会在每个子项被滚动到屏幕内执行通过position得到当前项的mainInterface实例
-    //然后将数据设置到ViewHolder中
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        Setting setting=SettingList.get(position);
-        holder.item.setText(setting.getItemText());
+    public View getView(int position, View convertView, ViewGroup parent) {
+        Setting setting=getItem(position);//获取当前项的Review实例
+        View view= LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
+        TextView Item=(TextView)view.findViewById(R.id.setting_item);
+        ImageView item_image =(ImageView)view.findViewById(R.id.setting_image);
+        Item.setText(setting.getItemText());
+        item_image.setImageResource(setting.getImage_id());
+        return view;
     }
 
 }

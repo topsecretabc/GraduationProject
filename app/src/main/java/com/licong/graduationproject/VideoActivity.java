@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -91,6 +92,7 @@ public class  VideoActivity extends AppCompatActivity {
                 break;
             case R.id.video_setup:
                 Intent intent_video_setting=new Intent(VideoActivity.this,SettingActivity.class);
+                Log.e("wanghao","intent_video_setting");
                 startActivity(intent_video_setting);
                 break;
 
