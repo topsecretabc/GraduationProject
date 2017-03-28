@@ -1,7 +1,7 @@
 package com.licong.graduationproject;
 
 import android.content.Intent;
-import android.support.v4.widget.DrawerLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,8 +9,10 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
 
 import com.licong.graduationproject.adapter.Review;
 import com.licong.graduationproject.adapter.ReviewAdapter;
@@ -55,13 +57,15 @@ public class  VideoActivity extends AppCompatActivity {
                 (VideoActivity.this,android.R.layout.simple_list_item_1,data);
         ListView listView=(ListView)findViewById(R.id.video_listview);
         listView.setAdapter(adapter);
-        /*
-        隐藏ActionBar（标题栏）
-        ActionBar actionBar=getSupportActionBar();
-        if(actionBar !=null){
-           actionBar.hide();
-         }
-         */
+        //悬浮按钮的点击事件
+        FloatingActionButton floatingActionButton=
+                (FloatingActionButton)findViewById(R.id.play_button);
+        floatingActionButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                //等api申请好
+            }
+        });
     }
     //加入讨论数据（等api申请好）
     private void initReview() {

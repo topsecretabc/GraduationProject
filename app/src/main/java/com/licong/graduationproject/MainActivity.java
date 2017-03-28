@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     //瀑布流布局的
     private List<MainInterface> mainInterfaceList=new ArrayList<>();
-    //头像跳登录的点击事件
-    private CircleImageView mAvatar;
+
     private RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
             case  android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
-
         }
         return true;
     }

@@ -17,8 +17,16 @@
             android:title="@string/download"/>
 
         <item
-            android:id="@+id/nav_search"
-            android:icon="@drawable/ic_search_query"
-            android:title="@string/search"/>
+            android:id="@+id/nav_collection"
+            android:icon="@drawable/ic_star_black_24dp"
+            android:title="@string/collection"/>
+        <item
+            android:id="@+id/nav_historyrecord"
+            android:icon="@drawable/ic_history_black_24dp"
+            android:title="@string/historyrecord"/>
+        <item
+            android:id="@+id/nav_dropout"
+            android:icon="@drawable/btn_close"
+            android:title="@string/dropout"/>
     </group>
 </menu>

@@ -21,14 +21,14 @@ public class LoginActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
-
+        //跳转到主界面
+        mImageView=(ImageView)findViewById(R.id.login_back);
+        mImageView.setOnClickListener(new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+            startActivity(intent);
         }
-    //跳转到主界面
-    public void toMainActivity(View v){
-        Intent intent_main=new Intent(LoginActivity.this,MainActivity.class);
-        startActivity(intent_main);
+    });
     }
-
-    }
-
-
+}
