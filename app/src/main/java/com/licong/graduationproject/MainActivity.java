@@ -1,6 +1,7 @@
 package com.licong.graduationproject;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.midi.MidiInputPort;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -10,8 +11,12 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.licong.graduationproject.adapter.MainInterface;
 import com.licong.graduationproject.adapter.MainInterfaceAdapter;
@@ -22,18 +27,26 @@ import java.util.List;
 import java.lang.String;
 import java.util.Random;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
+
     private DrawerLayout mDrawerLayout;
+    //瀑布流布局的
     private List<MainInterface> mainInterfaceList=new ArrayList<>();
+    //头像跳登录的点击事件
+    private CircleImageView mAvatar;
+    private RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
+       ;
         //初始化界面
         initMainInterfaces();
         //得到recyclerView的实例
-        RecyclerView recyclerView= (RecyclerView) findViewById(R.id.main_recycler);
+        recyclerView= (RecyclerView) findViewById(R.id.main_recycler);
         //第一个参数指定布局的列数，第二个指定布局的排列方向
         StaggeredGridLayoutManager  layoutManager=
              new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
@@ -47,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
         //取得DrawerLayout实例,DrawerLayout为主界面布局
-        mDrawerLayout=(DrawerLayout) findViewById(R.id.main_layout);
+        mDrawerLayout=(DrawerLayout) findViewById(R.id.main_layout_drawerLayout);
         //调用getSupportActionBar()得到ActionBar实例，虽然ActionBar是由Toolbar完成的
         ActionBar actionBar=getSupportActionBar();
         //加个非空，防止出现错误
@@ -57,8 +70,17 @@ public class MainActivity extends AppCompatActivity {
             // 实际上Toolbar最左侧的按钮就叫HomeAsUp，
             // 默认是一个返回的箭头，但我还是换成了drawer_home
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.main_drawer);
+            actionBar.setHomeAsUpIndicator(R.drawable.list_icn_mng);
         }
+        //将nav_header布局渲染进来
+       //  View view=LayoutInflater.from(this).inflate(R.layout.nav_header,mDrawerLayout,false);
+      //   mAvatar = (CircleImageView)view.findViewById(R.id.nav_header_image);
+
+    }
+    //设置头像的跳转事件
+    public void toLoginActivity(View v){
+        Intent intent_login=new Intent(MainActivity.this,LoginActivity.class);
+        startActivity(intent_login);
     }
 
     private void initMainInterfaces() {
@@ -124,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
             case  android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
+
         }
         return true;
     }

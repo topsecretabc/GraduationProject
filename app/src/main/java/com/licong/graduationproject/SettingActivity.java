@@ -54,7 +54,7 @@ public class SettingActivity extends AppCompatActivity {
             // 实际上Toolbar最左侧的按钮就叫HomeAsUp，
             // 默认是一个返回的箭头，但我还是换成了back_black
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.back_black);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black);
         }
     }
     public boolean onCreateOptionsMenu(Menu menu){

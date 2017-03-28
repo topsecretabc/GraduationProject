@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class  VideoActivity extends AppCompatActivity {
-    private DrawerLayout mDrawerLayout;
+
     //构建一个listview需要传入数据的对象
     private String[] data={"sdasd","dqqtweg","dadadafweg",
             "fsdfwegwg","fsdggww","fwegwre","wegwhuig","dqwtqeyg","qfgqeqegqeg","gwrgwgwh","wheheh","tjtrjy","ert",",qwr","wegwgw"};
@@ -35,11 +35,9 @@ public class  VideoActivity extends AppCompatActivity {
         ReviewAdapter reviewadapter=new ReviewAdapter
                 (VideoActivity.this,R.layout.video_review,ReviewList);
         //得到Toolbar的实例传入setSupportActionBar()
-        // 既使用了Toolbar有让它外观与功能与ActionBar一致
+        // 既使用了Toolbar又让它外观与功能与ActionBar一致
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar_video);
         setSupportActionBar(toolbar);
-        //取得DrawerLayout实例,DrawerLayout为主界面布局
-        mDrawerLayout=(DrawerLayout) findViewById(R.id.main_layout);
         //调用getSupportActionBar()得到ActionBar实例，虽然ActionBar是由Toolbar完成的
         ActionBar actionBar=getSupportActionBar();
         //加个非空，防止出现错误
@@ -49,7 +47,7 @@ public class  VideoActivity extends AppCompatActivity {
             // 实际上Toolbar最左侧的按钮就叫HomeAsUp，
             // 默认是一个返回的箭头，但我还是换成了back_black
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.back_black);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black);
         }
         //ArrayAdapter通过泛型来指定要适配的数据类型，提供多个构造函数重载
         //此处ArrayAdapter（当前上下文，ListView子项布局，适配的数据）
