@@ -4,14 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ImageView
-        android:id="@+id/review_userimage"
+        android:id="@+id/discuss_userimage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true" />
     <TextView
-        android:id="@+id/review_userid"
-        android:layout_toRightOf="@+id/review_userimage"
+        android:id="@+id/discuss_userid"
+        android:layout_below="@id/discuss_userimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/discuss_content"
+        android:layout_toRightOf="@id/discuss_userid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />

@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
         //取得DrawerLayout实例,DrawerLayout为主界面布局
-        mDrawerLayout=(DrawerLayout) findViewById(R.id.main_layout_drawerLayout);
+        mDrawerLayout=(DrawerLayout) findViewById(R.id.main_layout);
         //调用getSupportActionBar()得到ActionBar实例，虽然ActionBar是由Toolbar完成的
         ActionBar actionBar=getSupportActionBar();
         //加个非空，防止出现错误
