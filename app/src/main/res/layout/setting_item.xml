@@ -9,13 +9,23 @@
         android:id="@+id/setting_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-/>
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        app:layout_heightPercent="13%"
+        />
     <TextView
         android:id="@+id/setting_item"
         android:layout_width="wrap_content"
-        app:layout_heightPercent="10%"
+        android:layout_toRightOf="@id/setting_image"
+        android:layout_centerVertical="true"
+        android:textSize="15sp"
         />
-
+    <Spinner
+        android:id="@+id/setting_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/search_result_ic_bangumi"/>
 </android.support.percent.PercentRelativeLayout>
+

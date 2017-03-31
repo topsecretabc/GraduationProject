@@ -75,25 +75,25 @@ public class SettingActivity extends AppCompatActivity {
         return true;
     }
     private void initSetting() {
-        Setting Clarity = new Setting("清晰度选择",R.drawable.bangumi_timeline_weekday_7);
+        Setting Clarity = new Setting("清晰度选择",R.drawable._ic_31);
         SettingList.add(Clarity);
-        Setting Play_done = new Setting("播放完成后动作",R.drawable.bangumi_timeline_weekday_1);
+        Setting Play_done = new Setting("播放完成后动作",R.drawable.ic_32);
         SettingList.add(Play_done);
-        Setting Decode = new Setting("解码设置",R.drawable.bangumi_timeline_weekday_2);
+        Setting Decode = new Setting("解码设置",R.drawable.ic_33);
         SettingList.add(Decode);
-        Setting Barrage = new Setting("弹幕设置",R.drawable.bangumi_timeline_weekday_3);
+        Setting Barrage = new Setting("弹幕设置",R.drawable.ic_34);
         SettingList.add(Barrage);
-        Setting Offline = new Setting("离线设置",R.drawable.bangumi_timeline_weekday_4);
+        Setting Offline = new Setting("离线设置",R.drawable.ic_35);
         SettingList.add(Offline);
-        Setting Push_the_message = new Setting("不接受推送消息",R.drawable.bangumi_timeline_weekday_5);
+        Setting Push_the_message = new Setting("不接受推送消息",R.drawable.ic_36);
         SettingList.add(Push_the_message);
-        Setting Start_the_animation = new Setting("禁用启动动画",R.drawable.bangumi_home_ic_season_2);
+        Setting Start_the_animation = new Setting("禁用启动动画",R.drawable.ic_37);
         SettingList.add(Start_the_animation);
-        Setting Cache = new Setting("清空缓存",R.drawable.bangumi_home_ic_season_3);
+        Setting Cache = new Setting("清空缓存",R.drawable.ic_38);
         SettingList.add(Cache);
-        Setting default_setting = new Setting("恢复初始设置",R.drawable.bangumi_home_ic_season_4);
+        Setting default_setting = new Setting("恢复初始设置",R.drawable.ic_39);
         SettingList.add(default_setting);
-        Setting contact = new Setting("联系我",R.drawable.bangumi_home_ic_season_1);
+        Setting contact = new Setting("联系我",R.drawable.ic_40);
         SettingList.add(contact);
     }
 }

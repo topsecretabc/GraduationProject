@@ -47,7 +47,7 @@ public class  VideoActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.video_layout);
-        mPercentRelativeLayout = (PercentRelativeLayout) findViewById(R.id.video_layout);
+
         //初始化界面
         initViewPager();
     }
@@ -86,6 +86,7 @@ public class  VideoActivity extends AppCompatActivity {
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(new VideoLeftFragment());
         fragments.add(new VideoRightFragment());
+        mPercentRelativeLayout = (PercentRelativeLayout) findViewById(R.id.video_layout);
         //创建一个mRightFragmentAdapteradapter
         mRightFragmentAdapteradapter =
                 new VideoRightFragmentAdapter(getSupportFragmentManager(), fragments, titles);
@@ -98,6 +99,7 @@ public class  VideoActivity extends AppCompatActivity {
         mLeftViewPager.setAdapter
                 (new VideoLeftFragmentAdapter(getSupportFragmentManager(),leftFramgmentlist));
         mTabLayout.setupWithViewPager(mLeftViewPager);
+
         this.mLeftViewPager = (ViewPager) findViewById(R.id.video_viewPager);
         this.mRightViewPager = (ViewPager) findViewById(R.id.video_viewPager);
         this.tab = (TabLayout) findViewById(R.id.video_tabLayout);

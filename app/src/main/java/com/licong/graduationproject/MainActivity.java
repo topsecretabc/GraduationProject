@@ -81,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent_login=new Intent(MainActivity.this,LoginActivity.class);
         startActivity(intent_login);
     }
+    public void toMainActivity(View v){
+        mDrawerLayout.closeDrawer(GravityCompat.START);
+    }
 
     private void initMainInterfaces() {
         for (int i=0;i<2;i++){
@@ -144,6 +147,12 @@ public class MainActivity extends AppCompatActivity {
             //openDrawer()将侧滑菜单展示出来，要求传入一个Gracity参数，这里传入了START
             case  android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
+                break;
+
+
+            case R.id.main_to_setting:
+                Intent intent_to_settings=new Intent(MainActivity.this,SettingActivity.class);
+                startActivity(intent_to_settings);
                 break;
         }
         return true;

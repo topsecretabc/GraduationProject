@@ -7,7 +7,8 @@
     <color name="textColorPrimary">#7b7b7b</color>
     <color name="navigationBarColor">#000000</color>
     <color name="nav_header">#ffc5db</color>
-    <color name="lanse">#a3a3a3</color>
+    <color name="qianhui">#a3a3a3</color>
     <color name="yibanhong">#f2759f</color>
+    <color name="touming">#00ffffff</color>
 
 </resources>

@@ -10,7 +10,7 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/nav_header_image"
         app:layout_widthPercent="30%"
-        app:layout_heightPercent="70%"
+        app:layout_heightPercent="50%"
         android:clickable="true"
         android:src="@drawable/jxust"
         android:onClick="toLoginActivity"
@@ -26,6 +26,14 @@
         android:text="@string/login"
         />
 
+    <ImageView
+        app:layout_widthPercent="20%"
+        app:layout_heightPercent="20%"
+        android:src="@drawable/bili_drawerbg_logined"
+        android:id="@+id/imageView"
+        android:onClick="toMainActivity"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
 
 </android.support.percent.PercentRelativeLayout>
