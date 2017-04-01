@@ -2,7 +2,6 @@ package com.licong.graduationproject.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,7 @@ import com.licong.graduationproject.R;
  * Created by licong on 3/29/17.
  */
 
-public class VideoLeftFragment extends Fragment {
+public class VideoLeftFragment extends BaseFragment {
 
 
     public VideoLeftFragment () {

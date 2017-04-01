@@ -22,10 +22,11 @@
         />
     <Spinner
         android:id="@+id/setting_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       android:layout_alignParentRight="true"
+        app:layout_widthPercent="7%"
+        app:layout_heightPercent="5%"
+        android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/search_result_ic_bangumi"/>
+        android:background="@drawable/galleryeasyicon"
+        android:layout_margin="15dp"/>
 </android.support.percent.PercentRelativeLayout>
 

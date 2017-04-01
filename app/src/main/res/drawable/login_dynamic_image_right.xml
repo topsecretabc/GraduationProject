@@ -3,7 +3,7 @@
     android:oneshot="false">
 
     <item
-        android:drawable="@drawable/ic_33"
+        android:drawable="@drawable/_ic_33"
         android:duration="100" />
     <item
         android:drawable="@drawable/ic_33_hide"

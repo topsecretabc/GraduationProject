@@ -2,11 +2,8 @@ package com.licong.graduationproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -79,7 +76,7 @@ public class SettingActivity extends AppCompatActivity {
         SettingList.add(Clarity);
         Setting Play_done = new Setting("播放完成后动作",R.drawable.ic_32);
         SettingList.add(Play_done);
-        Setting Decode = new Setting("解码设置",R.drawable.ic_33);
+        Setting Decode = new Setting("解码设置",R.drawable._ic_33);
         SettingList.add(Decode);
         Setting Barrage = new Setting("弹幕设置",R.drawable.ic_34);
         SettingList.add(Barrage);

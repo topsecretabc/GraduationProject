@@ -2,7 +2,6 @@ package com.licong.graduationproject.fragment;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,7 +15,7 @@ import com.licong.graduationproject.adapter.VideoLeftFragmentRecyclerAdapter;
  * Created by licong on 3/29/17.
  */
 
-public class VideoRightFragment extends Fragment {
+public class VideoRightFragment extends BaseFragment {
     private RecyclerView mRecyclerView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
