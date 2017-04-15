@@ -44,184 +44,169 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-      <RelativeLayout
-          android:layout_width="match_parent"
-          android:layout_height="match_parent">
-          <LinearLayout
-              android:id="@+id/personal_profile_menu"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-              <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:orientation="vertical"
-                  android:background="@color/touming">
-                  <RelativeLayout
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content">
-                      <TextView
-                          android:id="@+id/personal_profile"
-                          android:layout_margin="@dimen/jiange"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="@string/personalprofile"
-                          android:textColor="@color/colorPrimaryDark"/>
-                      <TextView
-                          android:layout_margin="@dimen/jiange"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_below="@id/personal_profile"
-                          android:text="@string/avatar"
-                          android:textSize="@dimen/setting_words"
-                          android:textColor="@color/navigationBarColor"/>
-                  </RelativeLayout>
-                  <RelativeLayout
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content">
-                      <View
-                          android:id="@+id/play_xian1"
-                          android:layout_width="match_parent"
-                          android:layout_height="@dimen/fenhongxian"
-                          android:background="@color/qianhui"/>
-                      <TextView
-                          android:id="@+id/nickname_ziliao"
-                          android:layout_margin="@dimen/jiange"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_below="@id/play_xian1"
-                          android:text="@string/nickname"
-                          android:textSize="@dimen/setting_words"
-                          android:textColor="@color/navigationBarColor"/>
-                      <TextView
-                          android:id="@+id/playover_spinner"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_alignParentEnd="true"
-                          android:layout_above="@id/play_xian12"
-                      />
-                      <View
-                          android:id="@+id/play_xian12"
-                          android:layout_width="match_parent"
-                          android:layout_height="@dimen/fenhongxian"
-                          android:layout_below="@id/nickname_ziliao"
-                          android:background="@color/qianhui"/>
-                  </RelativeLayout>
-                  <RelativeLayout
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content">
-                      <TextView
-                          android:id="@+id/person_UID"
-                          android:layout_margin="@dimen/jiange"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="@string/UID"
-                          android:textSize="@dimen/setting_words"
-                          android:textColor="@color/navigationBarColor"/>
-                      <TextView
-                          android:id="@+id/UID_neirong"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_alignParentEnd="true"
-                          android:layout_above="@id/play_xian2"
-           />    <View
-                      android:layout_below="@id/person_UID"
-                      android:id="@+id/play_xian2"
-                      android:layout_width="match_parent"
-                      android:layout_height="@dimen/fenhongxian"
-                      android:background="@color/qianhui"/>
-                  </RelativeLayout>
-
-                  <RelativeLayout
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content">
-                      <TextView
-                          android:id="@+id/gender_person"
-                          android:layout_margin="@dimen/jiange"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="@string/gender"
-                          android:textSize="@dimen/setting_words"
-                          android:textColor="@color/navigationBarColor"/>
-                      <TextView
-                          android:id="@+id/gender_setting"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_alignParentEnd="true"
-                          android:layout_above="@id/play_xian3"/>
-                      <View
-                          android:id="@+id/play_xian3"
-                          android:layout_below="@id/gender_person"
-                          android:layout_width="match_parent"
-                          android:layout_height="@dimen/fenhongxian"
-                          android:background="@color/qianhui"/>
-                  </RelativeLayout>
-                  <RelativeLayout
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content">
-                      <TextView
-                          android:id="@+id/person_signature"
-                          android:layout_margin="@dimen/jiange"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="@string/signature"
-                          android:textSize="@dimen/setting_words"
-                          android:textColor="@color/navigationBarColor"/>
-                      <TextView
-                          android:id="@+id/signature_setting"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_alignParentEnd="true"
-                          android:layout_below="@id/person_signature"
-                          android:text="@string/lazy"
-                         />
-                      <View
-                          android:id="@+id/play_xian4"
-                          android:layout_below="@id/signature_setting"
-                          android:layout_width="match_parent"
-                          android:layout_height="@dimen/fenhongxian"
-                          android:background="@color/qianhui"/>
-                  </RelativeLayout>
-              </LinearLayout>
-
-          </LinearLayout>
-        <Button
-            android:id="@+id/sign_out"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/personal_profile_menu"
-            android:backgroundTint="@color/yibanhong"
-            android:text="@string/sign_out"
-            android:textColor="@color/colorPrimary"/>
-    </RelativeLayout>
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/personal_profile_menu"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/touming">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/personal_profile"
+                            android:layout_margin="@dimen/jiange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/personalprofile"
+                            android:textColor="@color/colorPrimaryDark"/>
+                        <TextView
+                            android:layout_margin="@dimen/jiange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/personal_profile"
+                            android:text="@string/avatar"
+                            android:textSize="@dimen/setting_words"
+                            android:textColor="@color/navigationBarColor"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:id="@+id/play_xian1"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/fenhongxian"
+                            android:background="@color/qianhui"/>
+                        <TextView
+                            android:id="@+id/nickname_ziliao"
+                            android:layout_margin="@dimen/jiange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/play_xian1"
+                            android:text="@string/nickname"
+                            android:textSize="@dimen/setting_words"
+                            android:textColor="@color/navigationBarColor"/>
+                        <View
+                            android:id="@+id/play_xian2"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/fenhongxian"
+                            android:layout_below="@id/nickname_ziliao"
+                            android:background="@color/qianhui"/>
+                        <TextView
+                            android:id="@+id/playover_spinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_above="@id/play_xian2"
+                            />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/person_UID"
+                            android:layout_margin="@dimen/jiange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/UID"
+                            android:textSize="@dimen/setting_words"
+                            android:textColor="@color/navigationBarColor"/>
+                        <View
+                            android:layout_below="@id/person_UID"
+                            android:id="@+id/play_xian3"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/fenhongxian"
+                            android:background="@color/qianhui"/>
+                        <TextView
+                            android:id="@+id/UID_neirong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_above="@id/play_xian3"
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/gender_person"
+                            android:layout_margin="@dimen/jiange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gender"
+                            android:textSize="@dimen/setting_words"
+                            android:textColor="@color/navigationBarColor"/>
+                        <View
+                            android:id="@+id/play_xian4"
+                            android:layout_below="@id/gender_person"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/fenhongxian"
+                            android:background="@color/qianhui"/>
+                        <TextView
+                            android:id="@+id/gender_setting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_above="@id/play_xian4"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/person_signature"
+                            android:layout_margin="@dimen/jiange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/signature"
+                            android:textSize="@dimen/setting_words"
+                            android:textColor="@color/navigationBarColor"/>
+                        <TextView
+                            android:id="@+id/signature_setting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@id/person_signature"
+                            android:text="@string/lazy"
+                            />
+                        <View
+                            android:id="@+id/play_xian5"
+                            android:layout_below="@id/signature_setting"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/fenhongxian"
+                            android:background="@color/qianhui"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/sign_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/personal_profile_menu"
+                android:backgroundTint="@color/yibanhong"
+                android:text="@string/sign_out"
+                android:textColor="@color/colorPrimary"/>
+        </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
 
-  <!-- <android.support.design.widget.FloatingActionButton
-        android:id="@+id/profile_floating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_anchor="@+id/profile_appbar"
-        app:layout_anchorGravity="center_vertical|right"
-        android:layout_gravity="bottom|left"
-        android:background="@color/luse"
-        android:src="@drawable/ic_category_t33"/>-->
+    <!-- <android.support.design.widget.FloatingActionButton
+          android:id="@+id/profile_floating"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_anchor="@+id/profile_appbar"
+          app:layout_anchorGravity="center_vertical|right"
+          android:layout_gravity="bottom|left"
+          android:background="@color/luse"
+          android:src="@drawable/ic_category_t33"/>-->
 
 </android.support.design.widget.CoordinatorLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

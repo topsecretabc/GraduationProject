@@ -34,11 +34,13 @@
                 android:textColor="@color/navigationBarColor"/>
             <Spinner
                 android:id="@+id/clarity_spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/setting_yuan"
+                android:layout_height="@dimen/setting_yuan"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@id/play_setting"
-                android:background="@drawable/xiaokongxinhuiyaun"/>
+                android:background="@drawable/xiaokongxinhuiyaun"
+                android:entries="@array/clarity"
+                android:spinnerMode="dialog"/>
 
         </RelativeLayout>
         <RelativeLayout
@@ -60,11 +62,13 @@
                 android:textColor="@color/navigationBarColor"/>
             <Spinner
                 android:id="@+id/playover_spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/setting_yuan"
+                android:layout_height="@dimen/setting_yuan"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@id/play_xian1"
-                android:background="@drawable/xiaokongxinhuiyaun"/>
+                android:background="@drawable/xiaokongxinhuiyaun"
+                android:entries="@array/playover"
+                android:spinnerMode="dialog"/>
 
         </RelativeLayout>
         <Space
@@ -92,17 +96,16 @@
             android:textColor="@color/navigationBarColor"/>
         <Spinner
             android:id="@+id/decoding_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/setting_yuan"
+            android:layout_height="@dimen/setting_yuan"
             android:layout_alignParentEnd="true"
             android:layout_below="@id/high_setting"
-            android:background="@drawable/xiaokongxinhuiyaun"/>
-        </RelativeLayout>
-        <Space
+            android:background="@drawable/xiaokongxinhuiyaun"
+            android:entries="@array/decoding"
+            android:spinnerMode="dialog"/>
 
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/jiange"
-            android:layout_below="@id/barrage_setting"/>
+        </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -129,11 +132,17 @@
                 android:textColor="@color/navigationBarColor"/>
             <Spinner
                 android:id="@+id/barrage_setting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/setting_yuan"
+                android:layout_height="@dimen/setting_yuan"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@id/space1"
-                android:background="@drawable/xiaokongxinhuiyaun"/>
+                android:background="@drawable/xiaokongxinhuiyaun"
+                android:entries="@array/barrage"
+                android:spinnerMode="dialog"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/jiange"
+                android:layout_below="@id/barrage_setting"/>
             <Space
                 android:id="@+id/space2"
                 android:layout_width="match_parent"
@@ -172,10 +181,10 @@
                 android:text="@string/help"
                 android:textSize="@dimen/setting_words"
                 android:textColor="@color/navigationBarColor"/>
-            <Spinner
+            <Button
                 android:id="@+id/help_setting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/setting_yuan"
+                android:layout_height="@dimen/setting_yuan"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@id/space3"
                 android:background="@drawable/xiaokongxinhuiyaun"/>
@@ -216,10 +225,10 @@
                 android:text="@string/video_item_about"
                 android:textSize="@dimen/setting_words"
                 android:textColor="@color/navigationBarColor"/>
-            <Spinner
+            <Button
                 android:id="@+id/about_setting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/setting_yuan"
+                android:layout_height="@dimen/setting_yuan"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@id/space5"
                 android:background="@drawable/xiaokongxinhuiyaun"/>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="clarity">
+        <item>标清</item>
+        <item>高清</item>
+        <item>超清</item>
+    </string-array>
+    <string-array name="playover">
+        <item>自动连播</item>
+        <item>不连播</item>
+        <item>循环播放</item>
+        <item>播完退出</item>
+    </string-array>
+    <string-array name="decoding">
+        <item>系统硬解优先</item>
+        <item>V3硬解优先</item>
+        <item>软解优先</item>
+    </string-array>
+    <string-array name="barrage">
+        <item>默认隐藏弹幕</item>
+        <item>普通</item>
+        <item>描边</item>
+        <item>阴影</item>
+    </string-array>
+</resources>

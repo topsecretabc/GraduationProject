@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/JXUST_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/about_github"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/jxust"
+        />
+
+    <TextView
+        android:id="@+id/about_github_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_github"
+        android:gravity="center"
+        android:text="@string/about_github_address"
+        app:layout_heightPercent="5%"/>
+    <TextView
+        android:id="@+id/about_none_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_github_address"
+        android:gravity="center"
+        android:text="@string/about_none"
+        app:layout_heightPercent="5%"/>
+    <TextView
+        android:id="@+id/about_mailbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_none_6"
+        android:gravity="center"
+        android:text="@string/about_mailbox"
+        app:layout_heightPercent="5%"/>
+    <TextView
+        android:id="@+id/about_mailbox_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_mailbox"
+        android:gravity="center"
+        android:text="@string/about_mailbox_address"
+        app:layout_heightPercent="5%"/>
+
+    <TextView
+        android:id="@+id/about_github"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/about_github"
+        app:layout_heightPercent="5%"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/help_words"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_mailbox_address"
+        android:gravity="center"
+        android:text="@string/contact_me"
+        app:layout_heightPercent="5%"/>
+
+
+</android.support.percent.PercentRelativeLayout>

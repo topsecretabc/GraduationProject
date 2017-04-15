@@ -57,9 +57,42 @@ public class SettingActivity extends AppCompatActivity {
                         new Intent(SettingActivity.this,MainActivity.class);
                 startActivity(intent_setting_home);
                 break;
-            //
+            //跳到帮助界面
+            case R.id.help_setting:
+                Intent intent_setting_help=
+                        new Intent(SettingActivity.this,HelpActivity.class);
+                startActivity(intent_setting_help);
+            //跳到关于界面
+            case R.id.about_setting:
+                Intent intent_setting_about=
+                        new Intent(SettingActivity.this,AboutActivity.class);
+                startActivity(intent_setting_about);
+
         }
         return true;
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,6 +3,8 @@ package com.licong.graduationproject;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.midi.MidiInputPort;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -31,7 +33,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //侧滑控件
     private DrawerLayout mDrawerLayout;
+    //侧滑菜单
+    private NavigationView navigationView;
     //瀑布流布局的
     private List<MainInterface> mainInterfaceList=new ArrayList<>();
 
@@ -41,11 +46,23 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
-       ;
+
         //初始化界面
         initMainInterfaces();
         //得到recyclerView的实例
         recyclerView= (RecyclerView) findViewById(R.id.main_recycler);
+        //得到RecyclerView实例
+        navigationView =(NavigationView)findViewById(R.id.nav_view);
+        navigationView.setCheckedItem(R.id.nav_home);
+        navigationView.setNavigationItemSelectedListener(new
+                NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                      mDrawerLayout.closeDrawers();
+                        return true;
+                    }
+                });
+
         //第一个参数指定布局的列数，第二个指定布局的排列方向
         StaggeredGridLayoutManager  layoutManager=
              new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
@@ -53,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         //将mainInterface放入适配器中
         MainInterfaceAdapter mainInterfaceAdapter=new MainInterfaceAdapter(mainInterfaceList);
         recyclerView.setAdapter(mainInterfaceAdapter);
-
         //得到Toolbar的实例传入setSupportActionBar()
         // 既使用了Toolbar又让它外观与功能与ActionBar一致
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar_main);
@@ -81,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent_login=new Intent(MainActivity.this,LoginActivity.class);
         startActivity(intent_login);
     }
+    //点击电视图片关闭侧滑
     public void toMainActivity(View v){
         mDrawerLayout.closeDrawer(GravityCompat.START);
     }
@@ -141,19 +158,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent_to_video=new Intent(MainActivity.this,VideoActivity.class);
                 startActivity(intent_to_video);
                 break;
-
             //打开侧滑框
             //homeAsUp按钮id永远是android.R.id.home
             //openDrawer()将侧滑菜单展示出来，要求传入一个Gracity参数，这里传入了START
             case  android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
+//            case R.id.main_to_setting:
+//                Intent intent_to_settings=new Intent(MainActivity.this,SettingActivity.class);
+//                startActivity(intent_to_settings);
+//                break;
 
-
-            case R.id.main_to_setting:
-                Intent intent_to_settings=new Intent(MainActivity.this,SettingActivity.class);
-                startActivity(intent_to_settings);
-                break;
         }
         return true;
     }
