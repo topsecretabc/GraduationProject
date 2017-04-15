@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="jiange">8dp</dimen>
+    <dimen name="fenhongxian">1dp</dimen>
+    <dimen name="setting_words">15sp</dimen>
+    <dimen name="header">200sp</dimen>
+    <dimen name="play_button">60sp</dimen>
+    <dimen name="header_image">100sp</dimen>
+</resources>

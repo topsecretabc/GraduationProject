@@ -37,7 +37,7 @@ public class VideoLeftFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView textView = (TextView) view.findViewById(R.id.textView_VideoLeftFragment);
+        TextView textView = (TextView) view.findViewById(R.id.tv_description);
         textView.setText(getArguments().getString("text"));
     }
 }

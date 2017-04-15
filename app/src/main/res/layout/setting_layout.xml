@@ -7,13 +7,237 @@
         android:id="@+id/toolbar_setting"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary" />
+        android:background="?attr/colorPrimaryDark" />
 
-    <ListView
-        android:id="@+id/setting_listview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/play_setting"
+                android:layout_margin="@dimen/jiange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/play"
+                android:textColor="@color/colorPrimaryDark"/>
+            <TextView
+                android:layout_margin="@dimen/jiange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/play_setting"
+                android:text="@string/clarity"
+                android:textSize="@dimen/setting_words"
+                android:textColor="@color/navigationBarColor"/>
+            <Spinner
+                android:id="@+id/clarity_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/play_setting"
+                android:background="@drawable/xiaokongxinhuiyaun"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <View
+            android:id="@+id/play_xian1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fenhongxian"
+            android:background="@color/qianhui"/>
+
+            <TextView
+                android:layout_margin="@dimen/jiange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/play_xian1"
+                android:text="@string/playover"
+                android:textSize="@dimen/setting_words"
+                android:textColor="@color/navigationBarColor"/>
+            <Spinner
+                android:id="@+id/playover_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/play_xian1"
+                android:background="@drawable/xiaokongxinhuiyaun"/>
+
+        </RelativeLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/jiange" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/high_setting"
+            android:layout_margin="@dimen/jiange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/high"
+            android:textColor="@color/colorPrimaryDark"/>
+        <TextView
+            android:id="@+id/decoding_setting"
+            android:layout_margin="@dimen/jiange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/high_setting"
+            android:text="@string/decoding"
+            android:textSize="@dimen/setting_words"
+            android:textColor="@color/navigationBarColor"/>
+        <Spinner
+            android:id="@+id/decoding_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/high_setting"
+            android:background="@drawable/xiaokongxinhuiyaun"/>
+        </RelativeLayout>
+        <Space
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/jiange"
+            android:layout_below="@id/barrage_setting"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/play_xian2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fenhongxian"
+                android:background="@color/qianhui"/>
+            <Space
+                android:id="@+id/space1"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/jiange"
+                android:layout_below="@id/play_xian2"/>
+
+            <TextView
+                android:layout_margin="@dimen/jiange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/space1"
+                android:text="@string/barrage"
+                android:textSize="@dimen/setting_words"
+                android:textColor="@color/navigationBarColor"/>
+            <Spinner
+                android:id="@+id/barrage_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/space1"
+                android:background="@drawable/xiaokongxinhuiyaun"/>
+            <Space
+                android:id="@+id/space2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/jiange"
+                android:layout_below="@id/barrage_setting"/>
+
+            <View
+                android:id="@+id/play_xian3"
+                android:layout_below="@id/space2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fenhongxian"
+                android:background="@color/qianhui"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/play_xian4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fenhongxian"
+                android:background="@color/qianhui"/>
+            <Space
+                android:id="@+id/space3"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/jiange"
+                android:layout_below="@id/play_xian4"/>
+
+            <TextView
+                android:layout_margin="@dimen/jiange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/space3"
+                android:text="@string/help"
+                android:textSize="@dimen/setting_words"
+                android:textColor="@color/navigationBarColor"/>
+            <Spinner
+                android:id="@+id/help_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/space3"
+                android:background="@drawable/xiaokongxinhuiyaun"/>
+            <Space
+                android:id="@+id/space4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/jiange"
+                android:layout_below="@id/help_setting"/>
+
+            <View
+                android:id="@+id/play_xian5"
+                android:layout_below="@id/space4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fenhongxian"
+                android:background="@color/qianhui"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/play_xian6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fenhongxian"
+                android:background="@color/qianhui"/>
+            <Space
+                android:id="@+id/space5"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/jiange"
+                android:layout_below="@id/play_xian6"/>
+
+            <TextView
+                android:layout_margin="@dimen/jiange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/space5"
+                android:text="@string/video_item_about"
+                android:textSize="@dimen/setting_words"
+                android:textColor="@color/navigationBarColor"/>
+            <Spinner
+                android:id="@+id/about_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/space5"
+                android:background="@drawable/xiaokongxinhuiyaun"/>
+            <Space
+                android:id="@+id/space6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/jiange"
+                android:layout_below="@id/about_setting"/>
+
+            <View
+                android:id="@+id/play_xian7"
+                android:layout_below="@id/space6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fenhongxian"
+                android:background="@color/qianhui"/>
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
 

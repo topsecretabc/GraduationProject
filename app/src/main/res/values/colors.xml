@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#ffc5db</color>
+    <color name="colorPrimaryDark">#fd8fb9</color>
     <color name="colorAccent">#FF4081</color>
     <color name="windowBackground">#f1f1f1</color>
     <color name="textColorPrimary">#7b7b7b</color>
@@ -10,5 +10,9 @@
     <color name="qianhui">#a3a3a3</color>
     <color name="yibanhong">#f2759f</color>
     <color name="touming">#00ffffff</color>
+    <color name="luse">#00abffae</color>
+    <color name="henqianhui">#c1c1c1</color>
+    <color name="baise">#fffefe</color>
+
 
 </resources>

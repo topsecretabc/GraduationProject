@@ -9,9 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import com.licong.graduationproject.adapter.Setting;
-import com.licong.graduationproject.adapter.SettingAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,20 +21,10 @@ import java.util.List;
 
 public class SettingActivity extends AppCompatActivity {
 
-    //构建一个listview需要传入数据的对象
-
-
-    private List<Setting> SettingList = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setting_layout);
-        initSetting();//初始化设置的项目
-        SettingAdapter settingAdapter=
-                new SettingAdapter(SettingActivity.this,R.layout.setting_item,SettingList);
-        ListView listView=(ListView)findViewById(R.id.setting_listview);
-        listView.setAdapter(settingAdapter);
         //得到Toolbar的实例传入setSupportActionBar()
         // 既使用了Toolbar有让它外观与功能与ActionBar一致
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_setting);
@@ -54,12 +41,14 @@ public class SettingActivity extends AppCompatActivity {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black);
         }
     }
+    //加入返回主菜单的图标
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_setting,menu);
         return true;
     }
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
+            //下面2个都是回到主菜单
             case android.R.id.home:
                 finish();
                 break;
@@ -68,29 +57,9 @@ public class SettingActivity extends AppCompatActivity {
                         new Intent(SettingActivity.this,MainActivity.class);
                 startActivity(intent_setting_home);
                 break;
+            //
         }
         return true;
     }
-    private void initSetting() {
-        Setting Clarity = new Setting("清晰度选择",R.drawable._ic_31);
-        SettingList.add(Clarity);
-        Setting Play_done = new Setting("播放完成后动作",R.drawable.ic_32);
-        SettingList.add(Play_done);
-        Setting Decode = new Setting("解码设置",R.drawable._ic_33);
-        SettingList.add(Decode);
-        Setting Barrage = new Setting("弹幕设置",R.drawable.ic_34);
-        SettingList.add(Barrage);
-        Setting Offline = new Setting("离线设置",R.drawable.ic_35);
-        SettingList.add(Offline);
-        Setting Push_the_message = new Setting("不接受推送消息",R.drawable.ic_36);
-        SettingList.add(Push_the_message);
-        Setting Start_the_animation = new Setting("禁用启动动画",R.drawable.ic_37);
-        SettingList.add(Start_the_animation);
-        Setting Cache = new Setting("清空缓存",R.drawable.ic_38);
-        SettingList.add(Cache);
-        Setting default_setting = new Setting("恢复初始设置",R.drawable.ic_39);
-        SettingList.add(default_setting);
-        Setting contact = new Setting("联系我",R.drawable.ic_40);
-        SettingList.add(contact);
-    }
+
 }

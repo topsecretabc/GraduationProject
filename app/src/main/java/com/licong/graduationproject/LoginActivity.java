@@ -30,6 +30,10 @@ public class LoginActivity extends AppCompatActivity {
 
     private SharedPreferences.Editor editor;
 
+    private ImageView mLeftLogo;
+
+    private ImageView mRightLogo;
+
     private EditText accountEdit;
 
     private EditText passwordEdit;
@@ -47,6 +51,8 @@ public class LoginActivity extends AppCompatActivity {
         //通过PreferenceManager的静态方法getDefaultSharedPreferences()
         //获取SharedPreferences对象
         preferences= PreferenceManager.getDefaultSharedPreferences(this);
+        mLeftLogo=(ImageView)findViewById(R.id.iv_icon_left);
+        mLeftLogo=(ImageView)findViewById(R.id.iv_icon_right);
         accountEdit =(EditText) findViewById(R.id.et_username);
         passwordEdit =(EditText) findViewById(R.id.et_password);
         remeberpassword =(CheckBox)findViewById(R.id.login_remember);

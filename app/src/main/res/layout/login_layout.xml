@@ -118,23 +118,6 @@
                 android:text="@string/login_loginbutton"
                 android:textColor="@color/colorPrimary"
                 />
-
-            <ImageView
-                android:id="@+id/iv_icon_left_bottom"
-                app:layout_widthPercent="10%"
-                app:layout_heightPercent="10%"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
-                android:src="@drawable/ic_22_hide" />
-
-            <ImageView
-                android:id="@+id/iv_icon_right_bottom"
-                app:layout_widthPercent="10%"
-                app:layout_heightPercent="10%"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:src="@drawable/ic_33_hide" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
