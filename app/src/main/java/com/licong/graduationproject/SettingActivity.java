@@ -40,6 +40,8 @@ public class SettingActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black);
         }
+        //进行设置的操作
+        inSetting();
     }
     //加入返回主菜单的图标
     public boolean onCreateOptionsMenu(Menu menu){
@@ -57,20 +59,14 @@ public class SettingActivity extends AppCompatActivity {
                         new Intent(SettingActivity.this,MainActivity.class);
                 startActivity(intent_setting_home);
                 break;
-            //跳到帮助界面
-            case R.id.help_setting:
-                Intent intent_setting_help=
-                        new Intent(SettingActivity.this,HelpActivity.class);
-                startActivity(intent_setting_help);
-            //跳到关于界面
-            case R.id.about_setting:
-                Intent intent_setting_about=
-                        new Intent(SettingActivity.this,AboutActivity.class);
-                startActivity(intent_setting_about);
 
         }
         return true;
     }
+    public void inSetting(){
+        //
+
+    };
 
 }
 

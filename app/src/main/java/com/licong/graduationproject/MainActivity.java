@@ -31,16 +31,17 @@ import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //侧滑控件
     private DrawerLayout mDrawerLayout;
-    //侧滑菜单
-    private NavigationView navigationView;
     //瀑布流布局的
-    private List<MainInterface> mainInterfaceList=new ArrayList<>();
+    private List<MainInterface> mainInterfaceList = new ArrayList<>();
 
     private RecyclerView recyclerView;
+    //侧滑菜单
+    private NavigationView mNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -49,37 +50,29 @@ public class MainActivity extends AppCompatActivity {
 
         //初始化界面
         initMainInterfaces();
-        //得到recyclerView的实例
-        recyclerView= (RecyclerView) findViewById(R.id.main_recycler);
-        //得到RecyclerView实例
-        navigationView =(NavigationView)findViewById(R.id.nav_view);
-        navigationView.setCheckedItem(R.id.nav_home);
-        navigationView.setNavigationItemSelectedListener(new
-                NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                      mDrawerLayout.closeDrawers();
-                        return true;
-                    }
-                });
-
+        //得到RecyclerView的实例
+        recyclerView = (RecyclerView) findViewById(R.id.main_recycler);
+        //得到NavigationView的实例
+        mNavigationView = (NavigationView) findViewById(R.id.nav_view);
+        //设置mNavigationView中item的监听事件
+        mNavigationView.setNavigationItemSelectedListener(this);
         //第一个参数指定布局的列数，第二个指定布局的排列方向
-        StaggeredGridLayoutManager  layoutManager=
-             new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
+        StaggeredGridLayoutManager layoutManager =
+                new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         //将mainInterface放入适配器中
-        MainInterfaceAdapter mainInterfaceAdapter=new MainInterfaceAdapter(mainInterfaceList);
+        MainInterfaceAdapter mainInterfaceAdapter = new MainInterfaceAdapter(mainInterfaceList);
         recyclerView.setAdapter(mainInterfaceAdapter);
         //得到Toolbar的实例传入setSupportActionBar()
         // 既使用了Toolbar又让它外观与功能与ActionBar一致
-        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
         //取得DrawerLayout实例,DrawerLayout为主界面布局
-        mDrawerLayout=(DrawerLayout) findViewById(R.id.main_layout);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.main_layout);
         //调用getSupportActionBar()得到ActionBar实例，虽然ActionBar是由Toolbar完成的
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         //加个非空，防止出现错误
-        if(actionBar != null){
+        if (actionBar != null) {
             //setDisplayHomeAsUpEnabled()方法让导航按钮显示出来
             // setHomeAsUpIndicator()设置一个导航按钮，
             // 实际上Toolbar最左侧的按钮就叫HomeAsUp，
@@ -88,59 +81,62 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setHomeAsUpIndicator(R.drawable.list_icn_mng);
         }
         //将nav_header布局渲染进来
-       //  View view=LayoutInflater.from(this).inflate(R.layout.nav_header,mDrawerLayout,false);
-      //   mAvatar = (CircleImageView)view.findViewById(R.id.nav_header_image);
+        //  View view=LayoutInflater.from(this).inflate(R.layout.nav_header,mDrawerLayout,false);
+        //   mAvatar = (CircleImageView)view.findViewById(R.id.nav_header_image);
 
     }
+
     //设置头像的跳转事件
-    public void toLoginActivity(View v){
-        Intent intent_login=new Intent(MainActivity.this,LoginActivity.class);
+    public void toLoginActivity(View v) {
+        Intent intent_login = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent_login);
     }
+
     //点击电视图片关闭侧滑
-    public void toMainActivity(View v){
+    public void toMainActivity(View v) {
         mDrawerLayout.closeDrawer(GravityCompat.START);
     }
 
     private void initMainInterfaces() {
-        for (int i=0;i<2;i++){
+        for (int i = 0; i < 2; i++) {
             MainInterface one =
-                    new MainInterface(R.drawable.bangumi_home_ic_season_1,getRandomLengthName("asdqwdqwvq"));
+                    new MainInterface(R.drawable.bangumi_home_ic_season_1, getRandomLengthName("asdqwdqwvq"));
             mainInterfaceList.add(one);
             MainInterface one1 =
-                    new MainInterface(R.drawable.bangumi_home_ic_season_2,getRandomLengthName("asdqfvq"));
+                    new MainInterface(R.drawable.bangumi_home_ic_season_2, getRandomLengthName("asdqfvq"));
             mainInterfaceList.add(one1);
             MainInterface one2 =
-                    new MainInterface(R.drawable.bangumi_home_ic_season_3,getRandomLengthName("adgfasfvq"));
+                    new MainInterface(R.drawable.bangumi_home_ic_season_3, getRandomLengthName("adgfasfvq"));
             mainInterfaceList.add(one2);
             MainInterface one3 =
-                    new MainInterface(R.drawable.bangumi_home_ic_season_4,getRandomLengthName("gfvq"));
+                    new MainInterface(R.drawable.bangumi_home_ic_season_4, getRandomLengthName("gfvq"));
             mainInterfaceList.add(one3);
             MainInterface one4 =
-                    new MainInterface(R.drawable.ic_bangumi_follow,getRandomLengthName("hrthqwvq"));
+                    new MainInterface(R.drawable.ic_bangumi_follow, getRandomLengthName("hrthqwvq"));
             mainInterfaceList.add(one4);
             MainInterface one5 =
-                    new MainInterface(R.drawable.ic_bangumi_followed,getRandomLengthName("fxvdqwvq"));
+                    new MainInterface(R.drawable.ic_bangumi_followed, getRandomLengthName("fxvdqwvq"));
             mainInterfaceList.add(one5);
             MainInterface one6 =
-                    new MainInterface(R.drawable.ic_btn_game,getRandomLengthName("uiuyqwdqwvq"));
+                    new MainInterface(R.drawable.ic_btn_game, getRandomLengthName("uiuyqwdqwvq"));
             mainInterfaceList.add(one6);
             MainInterface one7 =
-                    new MainInterface(R.drawable.ic_btn_rank_original,getRandomLengthName("ilqwvq"));
+                    new MainInterface(R.drawable.ic_btn_rank_original, getRandomLengthName("ilqwvq"));
             mainInterfaceList.add(one7);
             MainInterface one8 =
-                    new MainInterface(R.drawable.ic_category_live,getRandomLengthName("rytdqwdqwvq"));
+                    new MainInterface(R.drawable.ic_category_live, getRandomLengthName("rytdqwdqwvq"));
             mainInterfaceList.add(one8);
             MainInterface one9 =
-                    new MainInterface(R.drawable.ic_category_t15,getRandomLengthName("kuikjrtbqwdqwvq"));
+                    new MainInterface(R.drawable.ic_category_t15, getRandomLengthName("kuikjrtbqwdqwvq"));
             mainInterfaceList.add(one9);
         }
     }
-    private String  getRandomLengthName(String name){
-        Random random=new Random();
-        int length=random.nextInt(12)+1;
-        StringBuilder builder=new StringBuilder();
-        for (int i=0;i<length;i++){
+
+    private String getRandomLengthName(String name) {
+        Random random = new Random();
+        int length = random.nextInt(12) + 1;
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < length; i++) {
             builder.append(name);
         }
         return builder.toString();
@@ -148,28 +144,65 @@ public class MainActivity extends AppCompatActivity {
 
     //给主界面创建菜单
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main,menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             //进入视频界面
             case R.id.main_to_video:
-                Intent intent_to_video=new Intent(MainActivity.this,VideoActivity.class);
+                Intent intent_to_video = new Intent(MainActivity.this, VideoActivity.class);
                 startActivity(intent_to_video);
                 break;
             //打开侧滑框
             //homeAsUp按钮id永远是android.R.id.home
             //openDrawer()将侧滑菜单展示出来，要求传入一个Gracity参数，这里传入了START
-            case  android.R.id.home:
+            case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
-//            case R.id.main_to_setting:
-//                Intent intent_to_settings=new Intent(MainActivity.this,SettingActivity.class);
-//                startActivity(intent_to_settings);
-//                break;
-
         }
+        return true;
+    }
+
+
+    //设置mNavigationView中item的监听事件
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+        //回到主页
+        if (id == R.id.nav_home) {
+            // Handle the camera action
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+        }
+        //跳转到个人资料
+        else if (id == R.id.nav_myprofile) {
+            Intent intent_to_myprofile = new Intent(MainActivity.this, MyprofileActivity.class);
+            startActivity(intent_to_myprofile);
+        }
+        //跳转到我的收藏
+        else if (id == R.id.nav_collection) {
+            Intent intent_to_collection= new Intent(MainActivity.this, CollectionActivity.class);
+            startActivity(intent_to_collection);
+        }
+        //跳转到历史记录
+        else if (id == R.id.nav_historyrecord) {
+            Intent intent_to_historyrecord= new Intent(MainActivity.this, HistoryRecordActivity.class);
+            startActivity(intent_to_historyrecord);
+        }
+        //跳转到设置与帮助
+        else if (id == R.id.nav_settings) {
+            Intent intent_to_settings = new Intent(MainActivity.this,SettingActivity.class);
+            startActivity(intent_to_settings);
+        }
+        //退出
+        else if (id == R.id.nav_dropout) {
+                finish();
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.main_layout);
+        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 }

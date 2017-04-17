@@ -2,6 +2,7 @@ package com.licong.graduationproject.adapter;
 
 /**
  * Created by licong on 3/22/17.
+ * 这是主界面的各个视频item的类
  */
 
 public class MainInterface {

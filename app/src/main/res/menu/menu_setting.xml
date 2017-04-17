@@ -6,5 +6,6 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/home"
         app:showAsAction="always"
+
         />
 </menu>

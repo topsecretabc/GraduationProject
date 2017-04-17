@@ -53,4 +53,6 @@
     <string name="signature">个性签名</string>
     <string name="lazy">才，才不是懒得写签名呢！只是在思考</string>
     <string name="contact_me">需要帮助可以联系我</string>
+    <string name="introduction">简介</string>
+    <string name="comment">评论</string>
 </resources>

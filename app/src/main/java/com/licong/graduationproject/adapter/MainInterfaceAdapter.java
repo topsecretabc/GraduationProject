@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * Created by licong on 3/22/17.
+ * 主页面适配器
  */
 
 public class MainInterfaceAdapter extends RecyclerView.Adapter<MainInterfaceAdapter.ViewHolder>{

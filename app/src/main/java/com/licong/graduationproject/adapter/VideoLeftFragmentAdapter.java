@@ -10,30 +10,23 @@ import java.util.List;
 
 /**
  * Created by licong on 3/29/17.
+ * 视频界面左边简介适配器
  */
 
 public class VideoLeftFragmentAdapter extends FragmentPagerAdapter {
 
-    private List<String> mLeftVideo;
 
-    public VideoLeftFragmentAdapter(FragmentManager fm, List<String> list) {
+    public VideoLeftFragmentAdapter(FragmentManager fm) {
         super(fm);
-        this.mLeftVideo = list;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return VideoLeftFragment.newInstance(mLeftVideo.get(position));
+        return null;
     }
 
     @Override
     public int getCount() {
-        return mLeftVideo.size();
-    }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-
-        return mLeftVideo.get(position);
+        return 0;
     }
 }
