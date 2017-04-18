@@ -19,6 +19,11 @@
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimaryDark"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <Button
+                android:layout_width="@dimen/setting_words"
+                android:layout_height="@dimen/setting_words"
+                android:background="@drawable/ic_arrow_back_black"
+                android:layout_margin="@dimen/jiange"/>
             <ImageView
                 android:id="@+id/profile_background"
                 android:layout_width="match_parent"
@@ -30,13 +35,7 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_avater"
-        android:layout_width="@dimen/header_image"
-        android:layout_height="@dimen/header_image"
-        android:src="@drawable/jxust"
-        app:layout_anchor="@id/profile_appbar"
-        app:layout_anchorGravity="bottom|end"/>
+
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -193,6 +192,7 @@
                 android:text="@string/sign_out"
                 android:textColor="@color/colorPrimary"/>
         </RelativeLayout>
+
     </android.support.v4.widget.NestedScrollView>
 
     <!-- <android.support.design.widget.FloatingActionButton
@@ -204,6 +204,12 @@
           android:layout_gravity="bottom|left"
           android:background="@color/luse"
           android:src="@drawable/ic_category_t33"/>-->
-
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_avater"
+        android:layout_width="@dimen/header_image"
+        android:layout_height="@dimen/header_image"
+        android:src="@drawable/jxust"
+        app:layout_anchor="@id/profile_appbar"
+        app:layout_anchorGravity="bottom|end"/>
 </android.support.design.widget.CoordinatorLayout>
 
