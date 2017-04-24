@@ -1,11 +1,17 @@
 apply plugin: 'com.android.application'
 
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+        mavenCentral()
+    }
+}
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.2'
     defaultConfig {
         applicationId "com.licong.graduationproject"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -31,4 +37,11 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:25.2.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:support-v4:25.2.0'
+    compile ('com.github.Rukey7:IjkPlayerView:1.0.4'){
+        exclude group: 'com.android.support', module:'appcompat-v7'
+        exclude group: 'com.android.support', module:'appcompat-v4'
+    }
 }
+

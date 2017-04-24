@@ -1,31 +1,91 @@
 package com.licong.graduationproject;
 
+import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.ActionBar;
+import android.content.res.Configuration;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+;
+
+
+import com.bumptech.glide.Glide;
+import com.dl7.player.media.IjkPlayerView;
+
 
 
 public class  VideoActivity extends AppCompatActivity {
+    private IjkPlayerView mPlayerView;
+    private static final String VIDEO_URL = "http://flv2.bn.netease.com/videolib3/1611/28/GbgsL3639/SD/movie_index.m3u8";
 
-
-    private Toolbar toolbar;
-
-    @Override
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.video_layout);
+//        mPlayerView = new IjkPlayerView(this);
+//            RelativeLayout videoContainer = (RelativeLayout)
+//                    findViewById(R.id.play_view);
+//            videoContainer.addView((View) mPlayerView);
+            mPlayerView=(IjkPlayerView)findViewById(R.id.play_view);
+            Log.e("wanghao","VIDEO_URL:"+VIDEO_URL);
+            Uri uri=Uri.parse(VIDEO_URL);
+        mPlayerView.init()
+                .setVideoPath(uri)
+                .enableDanmaku()
+                .setDanmakuSource(getResources().openRawResource(R.raw.bili))
+                .setTitle("这是个跑马灯TextView，标题要足够长才会跑。-(゜ -゜)つロ 乾杯~")
+                .setMediaQuality(IjkPlayerView.MEDIA_QUALITY_HIGH);
 
-        //初始化界面
-        initViewPager();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPlayerView.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mPlayerView.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPlayerView.onDestroy();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mPlayerView.configurationChanged(newConfig);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (mPlayerView.handleVolumeKey(keyCode)) {
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mPlayerView.onBackPressed()) {
+            return;
+        }
+        super.onBackPressed();
+    }
+
+
+
 
     //给视频界面创建菜单
     @Override
@@ -54,32 +114,5 @@ public class  VideoActivity extends AppCompatActivity {
                 break;
         }
         return true;
-    }
-
-    public void initViewPager() {
-        //得到Toolbar的实例传入setSupportActionBar()
-        // 既使用了Toolbar又让它外观与功能与ActionBar一致
-        toolbar = (Toolbar) findViewById(R.id.toolbar_video);
-        setSupportActionBar(toolbar);
-        //调用getSupportActionBar()得到ActionBar实例，虽然ActionBar是由Toolbar完成的
-        ActionBar actionBar = getSupportActionBar();
-        //加个非空，防止出现错误
-        if (actionBar != null) {
-            //setDisplayHomeAsUpEnabled()方法让导航按钮显示出来
-            // setHomeAsUpIndicator()设置一个导航按钮，
-            // 实际上Toolbar最左侧的按钮就叫HomeAsUp，
-            // 默认是一个返回的箭头，但我还是换成了back_black
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black);
-        }
-        //悬浮按钮的点击事件
-        FloatingActionButton floatingActionButton =
-                (FloatingActionButton) findViewById(R.id.play_button);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //等api申请好
-            }
-        });
     }
 }

@@ -4,7 +4,7 @@
     <dimen name="jiange">8dp</dimen>
     <dimen name="fenhongxian">1dp</dimen>
     <dimen name="setting_words">15sp</dimen>
-    <dimen name="header">200sp</dimen>
+    <dimen name="header">250sp</dimen>
     <dimen name="nav_header">180sp</dimen>
     <dimen name="play_button">60sp</dimen>
     <dimen name="header_image">100sp</dimen>
