@@ -4,17 +4,17 @@
 
     <item
         android:drawable="@drawable/bili_anim_tv_chan_1"
-        android:duration="60" />
+        android:duration="100" />
     <item
         android:drawable="@drawable/bili_anim_tv_chan_3"
-        android:duration="60" />
+        android:duration="100" />
     <item
         android:drawable="@drawable/bili_anim_tv_chan_5"
-        android:duration="60" />
+        android:duration="100" />
     <item
         android:drawable="@drawable/bili_anim_tv_chan_7"
-        android:duration="60" />
+        android:duration="100" />
     <item
         android:drawable="@drawable/bili_anim_tv_chan_9"
-        android:duration="60" />
+        android:duration="100" />
 </animation-list>

@@ -1,6 +1,8 @@
 package com.licong.graduationproject;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.midi.MidiInputPort;
 import android.support.annotation.NonNull;
@@ -32,7 +34,6 @@ import java.util.Random;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
     //侧滑控件
     private DrawerLayout mDrawerLayout;
     //瀑布流布局的
@@ -41,12 +42,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RecyclerView recyclerView;
     //侧滑菜单
     private NavigationView mNavigationView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
+        SharedPreferences preferences = getSharedPreferences("isFirstIn", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putBoolean("isFirstIn", true);
+        // 提交修改
+
+        editor.commit();
 
         //初始化界面
         initMainInterfaces();
@@ -152,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             //进入视频界面
             case R.id.main_to_video:
-                Intent intent_to_video = new Intent(MainActivity.this, VideoActivity.class);
+                Intent intent_to_video = new Intent(MainActivity.this, WelcomePageActivity.class);
                 startActivity(intent_to_video);
                 break;
             //打开侧滑框

@@ -166,6 +166,7 @@
                             android:textSize="@dimen/setting_words"
                             android:textColor="@color/navigationBarColor"/>
                         <TextView
+                            android:layout_marginRight="@dimen/jiange"
                             android:id="@+id/signature_setting"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -179,6 +180,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/fenhongxian"
                             android:background="@color/qianhui"/>
+                        <Button
+                            android:layout_marginl="@dimen/jiange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/setting_yuan"
+                            android:layout_below="@id/play_xian5"
+                            android:background="@color/touming"
+                            android:text="@string/xiugai"
+                            android:textColor="@color/colorPrimaryDark"/>
                     </RelativeLayout>
                 </LinearLayout>
 

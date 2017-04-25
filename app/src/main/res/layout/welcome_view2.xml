@@ -7,8 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src=""
+        android:src="@drawable/img_tips_error_fav_no_data"
          />
 
 </LinearLayout>

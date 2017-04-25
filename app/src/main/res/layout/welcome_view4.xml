@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/btn_main"
+        android:layout_width="@dimen/nav_header"
+        android:layout_height="@dimen/welcome_h"
+        android:background="@drawable/button_shape"
+        android:text="@string/go_on"
+        android:textColor="@color/colorPrimaryDark"
+        android:visibility="visible"
+        android:layout_below="@+id/welcome_view4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/play_button" />
+
+    <ImageView
+        android:id="@+id/welcome_view4"
+        android:src="@drawable/anim_video_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/welcome_w"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</android.support.percent.PercentRelativeLayout>

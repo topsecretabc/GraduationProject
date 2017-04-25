@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="zero">0dp</dimen>
+    <dimen name="little">0.5dp</dimen>
     <dimen name="jiange">8dp</dimen>
     <dimen name="fenhongxian">1dp</dimen>
     <dimen name="setting_words">15sp</dimen>
@@ -9,7 +10,10 @@
     <dimen name="play_button">60sp</dimen>
     <dimen name="header_image">100sp</dimen>
     <dimen name="setting_yuan">30dp</dimen>
-    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="welcome_h">40dp</dimen>
+    <dimen name="welcome_w">200dp</dimen>
+    <dimen name="five_dp">5dp</dimen>
+    <dimen name="diandian">10.0dip</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 </resources>

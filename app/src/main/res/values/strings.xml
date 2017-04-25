@@ -55,4 +55,11 @@
     <string name="contact_me">需要帮助可以联系我</string>
     <string name="introduction">简介</string>
     <string name="comment">评论</string>
+    <string name="go_on">点击进入</string>
+    <string name="app">app</string>
+    <string name="jiangxi">江西</string>
+    <string name="ligong">理工</string>
+    <string name="daxue">大学</string>
+    <string name="JXUST">JXUST</string>
+    <string name="xiugai">修改资料</string>
 </resources>

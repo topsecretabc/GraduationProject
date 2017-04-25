@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/welcomehead_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Space
+        android:id="@+id/welcome_space"
+        android:layout_width="match_parent"
+        app:layout_heightPercent="1%"
+        android:layout_centerInParent="true"/>
+    <ImageView
+        android:id="@+id/welcome_imageView1"
+        app:layout_widthPercent="50%"
+        app:layout_heightPercent="40%"
+        android:src="@drawable/jxust"
+        android:layout_above="@id/welcome_space"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        app:layout_widthPercent="70%"
+        app:layout_heightPercent="30%"
+        android:src="@drawable/jiangxiligong"
+        android:id="@+id/imageView2"
+        android:layout_below="@id/welcome_space"
+        android:layout_centerInParent="true" />
+
+</android.support.percent.PercentRelativeLayout>

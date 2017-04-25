@@ -13,11 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".VideoActivity"
@@ -29,7 +25,14 @@
         <activity android:name=".CollectionActivity" />
         <activity android:name=".HistoryRecordActivity" />
         <activity android:name=".MyprofileActivity" />
-        <activity android:name=".WelcomePageActivity"></activity>
+        <activity android:name=".WelcomePageActivity" />
+        <activity android:name=".WelcomeoneActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
