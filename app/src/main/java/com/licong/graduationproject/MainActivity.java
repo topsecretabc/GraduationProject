@@ -47,23 +47,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
-        SharedPreferences preferences = getSharedPreferences("isFirstIn", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-
-        editor.putBoolean("isFirstIn", true);
-        // 提交修改
-
-        editor.commit();
-
-        //初始化界面
+        //设置欢迎界面打开与否
+        welcome();
+        //初始化瀑布流界面
         initMainInterfaces();
+        //初始化整个主界面
+        initFace();
+
+    }
+    public void initFace(){
         //得到RecyclerView的实例
         recyclerView = (RecyclerView) findViewById(R.id.main_recycler);
         //得到NavigationView的实例
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
         //设置mNavigationView中item的监听事件
         mNavigationView.setNavigationItemSelectedListener(this);
-        //第一个参数指定布局的列数，第二个指定布局的排列方向
+        //第一个参数指定瀑布流布局的列数，第二个指定布局的排列方向
         StaggeredGridLayoutManager layoutManager =
                 new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
@@ -103,50 +102,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void toMainActivity(View v) {
         mDrawerLayout.closeDrawer(GravityCompat.START);
     }
-
+    //设置瀑布流界面
     private void initMainInterfaces() {
-        for (int i = 0; i < 2; i++) {
-            MainInterface one =
-                    new MainInterface(R.drawable.bangumi_home_ic_season_1, getRandomLengthName("asdqwdqwvq"));
-            mainInterfaceList.add(one);
-            MainInterface one1 =
-                    new MainInterface(R.drawable.bangumi_home_ic_season_2, getRandomLengthName("asdqfvq"));
-            mainInterfaceList.add(one1);
-            MainInterface one2 =
-                    new MainInterface(R.drawable.bangumi_home_ic_season_3, getRandomLengthName("adgfasfvq"));
-            mainInterfaceList.add(one2);
-            MainInterface one3 =
-                    new MainInterface(R.drawable.bangumi_home_ic_season_4, getRandomLengthName("gfvq"));
-            mainInterfaceList.add(one3);
-            MainInterface one4 =
-                    new MainInterface(R.drawable.ic_bangumi_follow, getRandomLengthName("hrthqwvq"));
-            mainInterfaceList.add(one4);
-            MainInterface one5 =
-                    new MainInterface(R.drawable.ic_bangumi_followed, getRandomLengthName("fxvdqwvq"));
-            mainInterfaceList.add(one5);
-            MainInterface one6 =
-                    new MainInterface(R.drawable.ic_btn_game, getRandomLengthName("uiuyqwdqwvq"));
-            mainInterfaceList.add(one6);
-            MainInterface one7 =
-                    new MainInterface(R.drawable.ic_btn_rank_original, getRandomLengthName("ilqwvq"));
-            mainInterfaceList.add(one7);
-            MainInterface one8 =
-                    new MainInterface(R.drawable.ic_category_live, getRandomLengthName("rytdqwdqwvq"));
-            mainInterfaceList.add(one8);
-            MainInterface one9 =
-                    new MainInterface(R.drawable.ic_category_t15, getRandomLengthName("kuikjrtbqwdqwvq"));
-            mainInterfaceList.add(one9);
-        }
-    }
-
-    private String getRandomLengthName(String name) {
-        Random random = new Random();
-        int length = random.nextInt(12) + 1;
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < length; i++) {
-            builder.append(name);
-        }
-        return builder.toString();
     }
 
     //给主界面创建菜单
@@ -159,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             //进入视频界面
             case R.id.main_to_video:
-                Intent intent_to_video = new Intent(MainActivity.this, WelcomePageActivity.class);
+                Intent intent_to_video = new Intent(MainActivity.this, VideoActivity.class);
                 startActivity(intent_to_video);
                 break;
             //打开侧滑框
@@ -176,11 +133,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //设置mNavigationView中item的监听事件
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
         //回到主页
         if (id == R.id.nav_home) {
-            // Handle the camera action
             mDrawerLayout.closeDrawer(GravityCompat.START);
         }
         //跳转到个人资料
@@ -211,5 +166,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.main_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    //设置欢迎界面打开与否
+    public void welcome() {
+        SharedPreferences preferences = getSharedPreferences("isFirstIn", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("isFirstIn", true);
+        // 提交修改
+        editor.commit();
     }
 }

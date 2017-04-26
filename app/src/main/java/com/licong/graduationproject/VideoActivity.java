@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import com.bumptech.glide.Glide;
 import com.dl7.player.media.IjkPlayerView;
 
+import okhttp3.OkHttpClient;
 
 
 public class  VideoActivity extends AppCompatActivity {
@@ -32,9 +33,21 @@ public class  VideoActivity extends AppCompatActivity {
 //            RelativeLayout videoContainer = (RelativeLayout)
 //                    findViewById(R.id.play_view);
 //            videoContainer.addView((View) mPlayerView);
-            mPlayerView=(IjkPlayerView)findViewById(R.id.play_view);
-            Log.e("wanghao","VIDEO_URL:"+VIDEO_URL);
-            Uri uri=Uri.parse(VIDEO_URL);
+            OkHttpClient client = new OkHttpClient();
+
+
+    }
+    //设置网络请求
+    public void InternetGet(){
+        OkHttpClient client = new OkHttpClient();
+
+    }
+
+    //设置播放器
+    public void player(){
+        mPlayerView=(IjkPlayerView)findViewById(R.id.play_view);
+        Log.e("wanghao","VIDEO_URL:"+VIDEO_URL);
+        Uri uri=Uri.parse(VIDEO_URL);
         mPlayerView.init()
                 .setVideoPath(uri)
                 .enableDanmaku()
