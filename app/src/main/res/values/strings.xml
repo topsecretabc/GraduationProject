@@ -5,7 +5,7 @@
     <string name="myprofile">我的资料</string>
     <string name="download">我的下载</string>
     <string name="search">搜索一下</string>
-    <string name="collection">我的收藏</string>
+    <string name="collection">本地视频</string>
     <string name="historyrecord">历史记录</string>
     <string name="dropout">退出</string>
     <string name="app_name">简视</string>
@@ -62,4 +62,5 @@
     <string name="daxue">大学</string>
     <string name="JXUST">JXUST</string>
     <string name="xiugai">修改资料</string>
+    <string name="lingyige">另一个app</string>
 </resources>

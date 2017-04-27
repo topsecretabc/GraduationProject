@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         //获取SharedPreferences对象
         preferences= PreferenceManager.getDefaultSharedPreferences(this);
         mLeftLogo=(ImageView)findViewById(R.id.iv_icon_left);
-        mLeftLogo=(ImageView)findViewById(R.id.iv_icon_right);
+        mRightLogo=(ImageView)findViewById(R.id.iv_icon_right);
         accountEdit =(EditText) findViewById(R.id.et_username);
         passwordEdit =(EditText) findViewById(R.id.et_password);
         remeberpassword =(CheckBox)findViewById(R.id.login_remember);
@@ -88,6 +88,20 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this,"用户名或密码错误",
                             Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        passwordEdit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                mLeftLogo.setImageResource(R.drawable.ic_22_hide);
+                mRightLogo.setImageResource(R.drawable.ic_33_hide);
+            }
+        });
+        accountEdit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                mLeftLogo.setImageResource(R.drawable.ic_22);
+                mRightLogo.setImageResource(R.drawable.ic_33);
             }
         });
 

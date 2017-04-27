@@ -33,6 +33,12 @@
             android:checkable="true"
             />
         <item
+            android:id="@+id/nav_textapp"
+            android:icon="@drawable/ic_category_t33"
+            android:title="@string/lingyige"
+            android:checkable="true"/>
+
+        <item
             android:id="@+id/nav_dropout"
             android:icon="@drawable/ic_account_balance_wallet_black_24dp"
             android:title="@string/dropout"

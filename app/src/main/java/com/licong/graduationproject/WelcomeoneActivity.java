@@ -11,8 +11,6 @@ public class WelcomeoneActivity extends AppCompatActivity {
 
     private final int SPLASH_DISPLAY_LENGHT = 3000; //延迟三秒
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -158,6 +158,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent_to_settings = new Intent(MainActivity.this,SettingActivity.class);
             startActivity(intent_to_settings);
         }
+        else if (id == R.id.nav_textapp) {
+            Intent intent_to_textapp = new Intent(MainActivity.this,ToTextAppActivity.class);
+            startActivity(intent_to_textapp);
+        }
         //退出
         else if (id == R.id.nav_dropout) {
                 finish();
