@@ -1,4 +1,4 @@
-package com.licong.graduationproject;
+package com.licong.graduationproject.activity;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.licong.graduationproject.R;
 import com.licong.graduationproject.db.MyDatabaseHelper;
 
 public class ToTextAppActivity extends AppCompatActivity {

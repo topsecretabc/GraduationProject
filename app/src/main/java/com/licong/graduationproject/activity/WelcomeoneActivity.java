@@ -1,4 +1,4 @@
-package com.licong.graduationproject;
+package com.licong.graduationproject.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.licong.graduationproject.R;
 
 public class WelcomeoneActivity extends AppCompatActivity {
 

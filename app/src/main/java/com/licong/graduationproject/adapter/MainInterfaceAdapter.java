@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.licong.graduationproject.MainActivity;
 import com.licong.graduationproject.R;
+import com.licong.graduationproject.bean.MainInterface;
 
 import java.util.List;
 

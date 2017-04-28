@@ -1,7 +1,9 @@
-package com.licong.graduationproject;
+package com.licong.graduationproject.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.licong.graduationproject.R;
 
 public class AboutActivity extends AppCompatActivity {
 

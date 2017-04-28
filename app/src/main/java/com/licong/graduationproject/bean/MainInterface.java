@@ -1,4 +1,4 @@
-package com.licong.graduationproject.adapter;
+package com.licong.graduationproject.bean;
 
 /**
  * Created by licong on 3/22/17.

@@ -1,4 +1,4 @@
-package com.licong.graduationproject;
+package com.licong.graduationproject.activity;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

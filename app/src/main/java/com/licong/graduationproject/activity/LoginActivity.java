@@ -1,16 +1,10 @@
-package com.licong.graduationproject;
+package com.licong.graduationproject.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.Preference;
 import android.preference.PreferenceManager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,10 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.licong.graduationproject.adapter.MainInterface;
-import com.licong.graduationproject.adapter.MainInterfaceAdapter;
-
-import java.io.BufferedWriter;
+import com.licong.graduationproject.R;
 
 public class LoginActivity extends AppCompatActivity {
     private ImageView mImageView;

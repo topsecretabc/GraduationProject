@@ -1,4 +1,4 @@
-package com.licong.graduationproject;
+package com.licong.graduationproject.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.licong.graduationproject.R;
 import com.licong.graduationproject.fragment.WelcomeFragmentFour;
 import com.licong.graduationproject.fragment.WelcomeFragmentOne;
 import com.licong.graduationproject.fragment.WelcomeFragmentTwo;

@@ -1,6 +1,5 @@
-package com.licong.graduationproject;
+package com.licong.graduationproject.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
@@ -14,8 +13,8 @@ import android.view.MenuItem;
 ;
 
 
-import com.bumptech.glide.Glide;
 import com.dl7.player.media.IjkPlayerView;
+import com.licong.graduationproject.R;
 
 import okhttp3.OkHttpClient;
 

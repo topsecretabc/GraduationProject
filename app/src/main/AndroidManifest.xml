@@ -13,21 +13,21 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
         </activity>
         <activity
-            android:name=".VideoActivity"
+            android:name=".activity.VideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".SettingActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".HelpActivity" />
-        <activity android:name=".CollectionActivity" />
-        <activity android:name=".HistoryRecordActivity" />
-        <activity android:name=".MyprofileActivity" />
-        <activity android:name=".WelcomePageActivity" />
-        <activity android:name=".ToTextAppActivity"/>
-        <activity android:name=".WelcomeoneActivity">
+        <activity android:name=".activity.AboutActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.HelpActivity" />
+        <activity android:name=".activity.CollectionActivity" />
+        <activity android:name=".activity.HistoryRecordActivity" />
+        <activity android:name=".activity.MyprofileActivity" />
+        <activity android:name=".activity.WelcomePageActivity" />
+        <activity android:name=".activity.ToTextAppActivity"/>
+        <activity android:name=".activity.WelcomeoneActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,8 +36,18 @@
         </activity>
         <provider
             android:authorities="com.licong.graduationproject.provider"
-            android:name=".TextAppProvider"
-            android:exported="true"></provider>
+            android:name=".activity.TextAppProvider"
+            android:exported="true"/>
+        <receiver android:name=".widget.AppWidget" >
+        <intent-filter>
+            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+        </intent-filter>
+
+        <meta-data
+            android:name="android.appwidget.provider"
+            android:resource="@xml/widget_app" />
+    </receiver>
     </application>
+
 
 </manifest>

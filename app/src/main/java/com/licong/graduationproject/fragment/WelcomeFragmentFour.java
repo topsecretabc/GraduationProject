@@ -11,10 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 
-import com.ashokvarma.bottomnavigation.BottomNavigationBar;
-import com.licong.graduationproject.MainActivity;
+import com.licong.graduationproject.activity.MainActivity;
 import com.licong.graduationproject.R;
-import com.licong.graduationproject.WelcomePageActivity;
 
 /**
  * Created by licong on 4/25/17.
