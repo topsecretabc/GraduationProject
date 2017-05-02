@@ -20,10 +20,11 @@
             app:contentScrim="?attr/colorPrimaryDark"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
             <Button
+                android:id="@+id/profileback_button"
                 android:layout_width="@dimen/setting_words"
                 android:layout_height="@dimen/setting_words"
                 android:background="@drawable/ic_arrow_back_black"
-                android:layout_margin="@dimen/jiange"/>
+                android:layout_margin="@dimen/setting_words"/>
             <ImageView
                 android:id="@+id/profile_background"
                 android:layout_width="match_parent"

@@ -133,9 +133,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent_to_myprofile = new Intent(MainActivity.this, MyprofileActivity.class);
             startActivity(intent_to_myprofile);
         }
-        //跳转到我的收藏
+        //跳转到本地视频
         else if (id == R.id.nav_collection) {
-            Intent intent_to_collection= new Intent(MainActivity.this, CollectionActivity.class);
+            Intent intent_to_collection= new Intent(MainActivity.this, LocalVideoActivity.class);
             startActivity(intent_to_collection);
         }
         //跳转到历史记录

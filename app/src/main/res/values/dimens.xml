@@ -8,7 +8,7 @@
     <dimen name="header">250sp</dimen>
     <dimen name="nav_header">180sp</dimen>
     <dimen name="play_button">60sp</dimen>
-    <dimen name="header_image">100sp</dimen>
+    <dimen name="header_image">100dp</dimen>
     <dimen name="setting_yuan">30dp</dimen>
     <dimen name="welcome_h">40dp</dimen>
     <dimen name="welcome_w">200dp</dimen>
@@ -16,4 +16,5 @@
     <dimen name="diandian">10.0dip</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="image">80dp</dimen>
 </resources>

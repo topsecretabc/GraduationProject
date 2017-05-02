@@ -21,7 +21,7 @@ import okhttp3.OkHttpClient;
 
 public class  VideoActivity extends AppCompatActivity {
     private IjkPlayerView mPlayerView;
-    private static final String VIDEO_URL = "http://flv2.bn.netease.com/videolib3/1611/28/GbgsL3639/SD/movie_index.m3u8";
+    private static final String VIDEO_URL = "/storage/229D-13FB/aaa.mp4";
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,7 @@ public class  VideoActivity extends AppCompatActivity {
 //                    findViewById(R.id.play_view);
 //            videoContainer.addView((View) mPlayerView);
             OkHttpClient client = new OkHttpClient();
-
-
+            player();
     }
     //设置网络请求
     public void InternetGet(){
@@ -45,7 +44,6 @@ public class  VideoActivity extends AppCompatActivity {
     //设置播放器
     public void player(){
         mPlayerView=(IjkPlayerView)findViewById(R.id.play_view);
-        Log.e("wanghao","VIDEO_URL:"+VIDEO_URL);
         Uri uri=Uri.parse(VIDEO_URL);
         mPlayerView.init()
                 .setVideoPath(uri)

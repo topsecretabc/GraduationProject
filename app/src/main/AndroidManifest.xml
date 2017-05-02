@@ -3,9 +3,18 @@
     package="com.licong.graduationproject">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    |
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY" />
+    <uses-permission android:name="android.permission.WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
         android:allowBackup="true"
@@ -13,8 +22,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
-        </activity>
+        <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".activity.VideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
@@ -22,11 +30,14 @@
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.HelpActivity" />
-        <activity android:name=".activity.CollectionActivity" />
+        <activity android:name=".activity.LocalVideoActivity" />
+        <activity
+            android:name=".activity.PlayLocalVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".activity.HistoryRecordActivity" />
         <activity android:name=".activity.MyprofileActivity" />
         <activity android:name=".activity.WelcomePageActivity" />
-        <activity android:name=".activity.ToTextAppActivity"/>
+        <activity android:name=".activity.ToTextAppActivity" />
         <activity android:name=".activity.WelcomeoneActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,20 +45,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <provider
-            android:authorities="com.licong.graduationproject.provider"
             android:name=".activity.TextAppProvider"
-            android:exported="true"/>
-        <receiver android:name=".widget.AppWidget" >
-        <intent-filter>
-            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-        </intent-filter>
+            android:authorities="com.licong.graduationproject.provider"
+            android:exported="true" />
 
-        <meta-data
-            android:name="android.appwidget.provider"
-            android:resource="@xml/widget_app" />
-    </receiver>
+        <receiver android:name=".widget.AppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_app" />
+        </receiver>
+
+        <activity android:name=".activity.ModifyDataActivity"></activity>
     </application>
-
 
 </manifest>

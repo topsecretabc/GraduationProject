@@ -1,11 +1,17 @@
 package com.licong.graduationproject.activity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.licong.graduationproject.R;
 
@@ -17,9 +23,17 @@ public class WelcomeoneActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcomehead_layout);
+        if (ContextCompat.checkSelfPermission(WelcomeoneActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(WelcomeoneActivity.this, new String[]
+                    {Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+        }else {
+            judgment();
+        }
+        }
+    public  void  judgment(){
         //读取SharedPreFerences中需要的数据,使用SharedPreFerences来记录程序启动的使用次数
         SharedPreferences preferences = getSharedPreferences("isFirstIn", MODE_PRIVATE);
-        Log.e("wanghao","WelcomeoneActivity");
         //取得相应的值,如果没有该值,说明还未写入,用true作为默认值
         boolean isFirstIn;
         isFirstIn = preferences.getBoolean("isFirstIn", false);
@@ -41,4 +55,19 @@ public class WelcomeoneActivity extends AppCompatActivity {
             WelcomeoneActivity.this.finish();
         }
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case 1:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    judgment();
+                } else {
+                    Toast.makeText(this, "没有权限啊兄弟", Toast.LENGTH_LONG).show();
+                }
+                break;
+            default:
+        }
+    }
 }
+

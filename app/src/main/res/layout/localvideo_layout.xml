@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/localvideo"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+     <android.support.v7.widget.Toolbar
+         android:id="@+id/toolbar_collection"
+         android:layout_width="match_parent"
+         android:layout_height="?attr/actionBarSize"
+         android:background="?attr/colorPrimary" >
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+               <Button
+                   android:id="@+id/local_main"
+                   android:layout_width="@dimen/setting_words"
+                   android:layout_height="@dimen/setting_words"
+                   android:background="@drawable/ic_arrow_back_black"
+                   android:layout_centerVertical="true"
+                   android:layout_alignParentLeft="true" />
+               <TextView
+                   android:id="@+id/bendi_text"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="@dimen/jiange"
+                   android:layout_alignParentRight="true"
+                   android:layout_centerVertical="true"
+                   android:text="@string/bendi"
+                   android:textSize="@dimen/setting_words"/>
+               <Button
+                   android:id="@+id/bendi_button"
+                   android:layout_width="@dimen/setting_yuan"
+                   android:layout_height="@dimen/setting_yuan"
+                   android:background="@drawable/actionbar_menu_icn_scan"
+                   android:layout_centerVertical="true"
+                   android:layout_toLeftOf="@id/bendi_text" />
+
+          </RelativeLayout>
+         </android.support.v7.widget.Toolbar>
+     <ListView
+         android:id="@+id/local_listview"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+     </ListView>
+</LinearLayout>
