@@ -16,14 +16,6 @@
         android:onClick="toLoginActivity"
         android:layout_gravity="start|top"
         android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/header_username" />
-
-    <TextView
-        android:id="@+id/header_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/nav_header_image"
-        android:text="@string/login"
         />
 
     <ImageView
@@ -33,7 +25,7 @@
         android:id="@+id/imageView"
         android:onClick="toMainActivity"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
-
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
 
 </android.support.percent.PercentRelativeLayout>

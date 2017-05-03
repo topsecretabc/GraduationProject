@@ -42,12 +42,13 @@ public class LoginActivity extends AppCompatActivity {
         //通过PreferenceManager的静态方法getDefaultSharedPreferences()
         //获取SharedPreferences对象
         preferences= PreferenceManager.getDefaultSharedPreferences(this);
+        Button button=(Button)findViewById(R.id.login_back) ;
         mLeftLogo=(ImageView)findViewById(R.id.iv_icon_left);
         mRightLogo=(ImageView)findViewById(R.id.iv_icon_right);
         accountEdit =(EditText) findViewById(R.id.et_username);
         passwordEdit =(EditText) findViewById(R.id.et_password);
         remeberpassword =(CheckBox)findViewById(R.id.login_remember);
-        registered =(Button)findViewById(R.id.button_registered);
+//        registered =(Button)findViewById(R.id.button_registered);
         login=(Button)findViewById(R.id.button_login);
         boolean isRemember =preferences.getBoolean("记住密码",false);
         if(isRemember){
@@ -57,12 +58,19 @@ public class LoginActivity extends AppCompatActivity {
             passwordEdit.setText(password);
             remeberpassword.setChecked(true);
         }
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent_main=new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(intent_main);
+            }
+        });
         login.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 String account = accountEdit.getText().toString();
                 String password = passwordEdit.getText().toString();
-                if (account.equals("admin") && password.equals("123456")) {
+                if (account.equals(R.string.admin) && password.equals(R.string.password)) {
                     editor = preferences.edit();
                     if (remeberpassword.isChecked()) {
                         editor.putBoolean("记住密码", true);

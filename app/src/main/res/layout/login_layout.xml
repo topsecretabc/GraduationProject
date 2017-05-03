@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         >
-     <ImageView
+     <Button
          android:id="@+id/login_back"
-         app:layout_widthPercent="10%"
-         android:layout_height="wrap_content"
+         app:layout_widthPercent="5%"
+         android:layout_height="@dimen/setting_words"
          android:layout_centerVertical="true"
-         android:src="@drawable/ic_arrow_back_black"
+         android:background="@drawable/ic_arrow_back_black"
 
          />
         <TextView
@@ -99,7 +99,7 @@
                 android:layout_below="@id/et_password"
                 />
 
-            <Button
+           <!-- <Button
                 android:id="@+id/button_registered"
                 app:layout_widthPercent="40%"
                 app:layout_heightPercent="10%"
@@ -108,10 +108,10 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@android:color/transparent"
                 android:text="@string/login_registered"
-                />
+                />-->
             <Button
                 android:id="@+id/button_login"
-                app:layout_widthPercent="60%"
+                app:layout_widthPercent="100%"
                 app:layout_heightPercent="10%"
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/login_remember"

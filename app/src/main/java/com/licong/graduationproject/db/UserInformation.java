@@ -8,24 +8,14 @@ import org.litepal.crud.DataSupport;
  */
 
 public class UserInformation extends DataSupport {
-    //头像id
-    private int mImageId ;
     //昵称
     private String name;
     //UID
-    private int UID;
+    private int id;
     //性别
     private boolean gender;
     //个性签名
     private String signature;
-
-    public int getmImageId() {
-        return mImageId;
-    }
-
-    public void setmImageId(int mImageId) {
-        this.mImageId = mImageId;
-    }
 
     public String getName() {
         return name;
@@ -35,12 +25,12 @@ public class UserInformation extends DataSupport {
         this.name = name;
     }
 
-    public int getUID() {
-        return UID;
+    public int getid() {
+        return id;
     }
 
-    public void setUID(int UID) {
-        this.UID = UID;
+    public void setid(int id) {
+        this.id = id;
     }
 
     public boolean isGender() {

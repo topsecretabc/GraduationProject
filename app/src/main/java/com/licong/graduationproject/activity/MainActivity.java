@@ -15,10 +15,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.licong.graduationproject.R;
 import com.licong.graduationproject.bean.MainInterface;
 import com.licong.graduationproject.adapter.MainInterfaceAdapter;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -135,13 +138,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         //跳转到本地视频
         else if (id == R.id.nav_collection) {
-            Intent intent_to_collection= new Intent(MainActivity.this, LocalVideoActivity.class);
+            Intent intent_to_collection= new Intent(MainActivity.this,LocalVideoActivity.class);
             startActivity(intent_to_collection);
-        }
-        //跳转到历史记录
-        else if (id == R.id.nav_historyrecord) {
-            Intent intent_to_historyrecord= new Intent(MainActivity.this, HistoryRecordActivity.class);
-            startActivity(intent_to_historyrecord);
         }
         //跳转到设置与帮助
         else if (id == R.id.nav_settings) {

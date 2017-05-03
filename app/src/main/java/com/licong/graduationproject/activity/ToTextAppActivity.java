@@ -35,9 +35,6 @@ public class ToTextAppActivity extends AppCompatActivity {
                 ContentValues values = new ContentValues();
                 values.put("textapptext", inputText);
                 db.insert("Textapp", null, values);
-                Log.e("lciong","asd"+values);
-
-
             }
         });
 

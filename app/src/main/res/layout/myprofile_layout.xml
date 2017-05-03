@@ -97,10 +97,11 @@
                             android:layout_below="@id/nickname_ziliao"
                             android:background="@color/qianhui"/>
                         <TextView
-                            android:id="@+id/playover_spinner"
+                            android:id="@+id/nickname_textview"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
                             android:layout_above="@id/play_xian2"
                             />
                     </RelativeLayout>
@@ -122,10 +123,11 @@
                             android:layout_height="@dimen/fenhongxian"
                             android:background="@color/qianhui"/>
                         <TextView
-                            android:id="@+id/UID_neirong"
+                            android:id="@+id/UID_textview"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
                             android:layout_above="@id/play_xian3"
                             />
                     </RelativeLayout>
@@ -152,6 +154,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
                             android:layout_above="@id/play_xian4"/>
 
                     </RelativeLayout>
@@ -172,6 +175,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
                             android:layout_below="@id/person_signature"
                             android:text="@string/lazy"
                             />
@@ -182,6 +186,7 @@
                             android:layout_height="@dimen/fenhongxian"
                             android:background="@color/qianhui"/>
                         <Button
+                            android:id="@+id/to_modifydata"
                             android:layout_width="wrap_content"
                             android:layout_height="@dimen/setting_yuan"
                             android:layout_below="@id/play_xian5"
@@ -192,14 +197,6 @@
                 </LinearLayout>
 
             </LinearLayout>
-            <Button
-                android:id="@+id/sign_out"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/personal_profile_menu"
-                android:backgroundTint="@color/yibanhong"
-                android:text="@string/sign_out"
-                android:textColor="@color/colorPrimary"/>
         </RelativeLayout>
 
     </android.support.v4.widget.NestedScrollView>

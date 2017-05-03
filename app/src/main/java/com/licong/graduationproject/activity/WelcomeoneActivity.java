@@ -26,7 +26,8 @@ public class WelcomeoneActivity extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(WelcomeoneActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(WelcomeoneActivity.this, new String[]
-                    {Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+                    {Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.CAMERA
+                    ,Manifest.permission.BODY_SENSORS,Manifest.permission.READ_CALENDAR}, 1);
         }else {
             judgment();
         }
@@ -42,14 +43,12 @@ public class WelcomeoneActivity extends AppCompatActivity {
             new Handler().postDelayed(new Runnable(){
                 @Override
                 public void run() {
-                    Log.e("wanghao","postDelayed");
                     Intent mainIntent = new Intent(WelcomeoneActivity.this,MainActivity.class);
                     WelcomeoneActivity.this.startActivity(mainIntent);
                     WelcomeoneActivity.this.finish();
                 }
             }, SPLASH_DISPLAY_LENGHT);
         } else {
-            Log.e("wanghao","else");
             Intent intent = new Intent(WelcomeoneActivity.this, WelcomePageActivity.class);
             WelcomeoneActivity.this.startActivity(intent);
             WelcomeoneActivity.this.finish();
@@ -63,7 +62,7 @@ public class WelcomeoneActivity extends AppCompatActivity {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     judgment();
                 } else {
-                    Toast.makeText(this, "没有权限啊兄弟", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "没有权限你要我怎么办", Toast.LENGTH_LONG).show();
                 }
                 break;
             default:

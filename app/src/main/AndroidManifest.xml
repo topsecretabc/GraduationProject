@@ -17,6 +17,7 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
+        android:name="org.litepal.LitePalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -36,6 +37,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".activity.HistoryRecordActivity" />
         <activity android:name=".activity.MyprofileActivity" />
+        <activity android:name=".activity.ModifyDataActivity" />
         <activity android:name=".activity.WelcomePageActivity" />
         <activity android:name=".activity.ToTextAppActivity" />
         <activity android:name=".activity.WelcomeoneActivity">
@@ -51,6 +53,7 @@
             android:authorities="com.licong.graduationproject.provider"
             android:exported="true" />
 
+
         <receiver android:name=".widget.AppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -58,10 +61,15 @@
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_app" />
+                android:resource="@xml/appwidget" />
         </receiver>
 
-        <activity android:name=".activity.ModifyDataActivity"></activity>
+        <activity android:name=".activity.ModifyDataActivity" />
+
+        <service
+            android:name=".service.TimerService"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>
