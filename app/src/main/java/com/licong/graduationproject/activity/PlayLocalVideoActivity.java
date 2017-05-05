@@ -23,7 +23,6 @@ public class PlayLocalVideoActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_local_video_layout);
-
         Bundle bundle = getIntent().getExtras();
         //取得视频信息，标识符为“video”
         playVideoFile = (LocalVideo)bundle.getSerializable("video");

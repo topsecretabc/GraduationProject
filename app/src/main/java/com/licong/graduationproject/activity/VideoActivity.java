@@ -14,45 +14,46 @@ import android.view.MenuItem;
 
 
 import com.dl7.player.media.IjkPlayerView;
+import com.licong.graduationproject.API.API;
 import com.licong.graduationproject.R;
-
-import okhttp3.OkHttpClient;
+import com.licong.graduationproject.bean.LocalVideo;
 
 
 public class  VideoActivity extends AppCompatActivity {
     private IjkPlayerView mPlayerView;
-    private static final String VIDEO_URL = "/storage/229D-13FB/aaa.mp4";
+    private String contid;private String VIDEO_URL="http://baobab.kaiyanapp.com/api/v1/playUrl?vid=9528&editionType=default&source=ucloud";
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.video_layout);
-//        mPlayerView = new IjkPlayerView(this);
-//            RelativeLayout videoContainer = (RelativeLayout)
-//                    findViewById(R.id.play_view);
-//            videoContainer.addView((View) mPlayerView);
-            OkHttpClient client = new OkHttpClient();
-            player();
-    }
-    //设置网络请求
-    public void InternetGet(){
-        OkHttpClient client = new OkHttpClient();
-
-    }
-
-    //设置播放器
-    public void player(){
-        mPlayerView=(IjkPlayerView)findViewById(R.id.play_view);
-        Uri uri=Uri.parse(VIDEO_URL);
-        mPlayerView.init()
-                .setVideoPath(uri)
-                .enableDanmaku()
-                .setDanmakuSource(getResources().openRawResource(R.raw.bili))
-                .setTitle("这是个跑马灯TextView，标题要足够长才会跑。-(゜ -゜)つロ 乾杯~")
-                .setMediaQuality(IjkPlayerView.MEDIA_QUALITY_HIGH);
-
-    }
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.video_layout);
+            Bundle bundle = getIntent().getExtras();
+            //取得contid，标识符为“video”
+            contid = bundle.getString("video");
+            mPlayerView=(IjkPlayerView)findViewById(R.id.play_view);
+            Uri uri=Uri.parse(VIDEO_URL);
+            mPlayerView.init()
+                    .setVideoPath(uri)
+                    .setMediaQuality(IjkPlayerView.MEDIA_QUALITY_HIGH);
+//            private IjkPlayerView mPlayerView;
+//            LocalVideo playVideoFile;
+//            @Override
+//            protected void onCreate(Bundle savedInstanceState) {
+//
+//                Bundle bundle = getIntent().getExtras();
+//                //取得视频信息，标识符为“video”
+//                playVideoFile = (LocalVideo)bundle.getSerializable("video");
+//                //取得视频地址
+//                String mVideoUri = playVideoFile.getPath();
+//                String mVideoTitle = playVideoFile.getTitle();
+//                mPlayerView=(IjkPlayerView)findViewById(R.id.local_player_view);
+//                Uri uri=Uri.parse(mVideoUri);
+//                mPlayerView.init()
+//                        .setVideoPath(uri)
+//                        .setTitle(mVideoTitle)
+//                        .setMediaQuality(IjkPlayerView.MEDIA_QUALITY_HIGH);
+        }
 
     @Override
     protected void onResume() {
