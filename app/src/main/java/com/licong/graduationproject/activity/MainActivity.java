@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -60,6 +61,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             switch (msg.what){
                 case 1:
                     MainInterfaceAdapter mainInterfaceAdapter = new MainInterfaceAdapter(titles,images,contids,MainActivity.this);
+
+//-------------------------------------------------------------------------------------
+                    mainInterfaceAdapter.setOnItemClickListener(new MainInterfaceAdapter.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+                            Toast.makeText(MainActivity.this, "click " + images.get(position), Toast.LENGTH_SHORT).show();
+                            Intent intent_PlayVideo = new Intent(MainActivity.this, VideoActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("video", contids.get(position));
+                            intent_PlayVideo.putExtras(bundle);
+                            startActivity(intent_PlayVideo);
+                        }
+                    });
+                    mainInterfaceAdapter.setOnItemLongClickListener(new MainInterfaceAdapter.OnItemLongClickListener() {
+                        @Override
+                        public void onItemLongClick(View view, int position) {
+                            Toast.makeText(MainActivity.this,"long click "+images.get(position),Toast.LENGTH_SHORT).show();
+                            Intent intent_PlayVideo = new Intent(MainActivity.this, VideoActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("video", contids.get(position));
+                            intent_PlayVideo.putExtras(bundle);
+                            startActivity(intent_PlayVideo);
+                        }
+                    });
+                    //-------------------------------------------------------------------------------
                     recyclerView.setAdapter(mainInterfaceAdapter);
                     break;
             }
@@ -71,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //侧滑菜单
     private NavigationView mNavigationView;
     //
-    private IntenetVideo mTitlelist ;
+    private IntenetVideo mVideolist ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -93,9 +119,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         welcome();
         //初始化整个主界面
         initFace();
-//        sendRequestWithHttpURLConnection();
-
-
     }
     public void initFace(){
         //得到RecyclerView的实例
@@ -227,16 +250,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void parseJSONWithGSON(String jsonData) {
         Gson gson = new Gson();
         //解析这种非常复杂的嵌套的json需要先创建一个基类的对象然后再用其拿到数据
-        mTitlelist = gson.fromJson(jsonData, IntenetVideo.class);
+        mVideolist = gson.fromJson(jsonData, IntenetVideo.class);
         //遍历获得数据存入集合中
-        for (int i = 0; i < mTitlelist.getDataList().size(); i++) {
-            for (int b = 0; b < mTitlelist.getDataList().get(i).getContList().size(); b++) {
-                String contid = mTitlelist.getDataList().get(i).getContList().get(b).getContId();
+        for (int i = 0; i < mVideolist.getDataList().size(); i++) {
+            for (int b = 0; b < mVideolist.getDataList().get(i).getContList().size(); b++) {
+                String contid = mVideolist.getDataList().get(i).getContList().get(b).getContId();
                 contids.add(contid);
-                String title = mTitlelist.getDataList().get(i).getContList().get(b).getName();
+                String title = mVideolist.getDataList().get(i).getContList().get(b).getName();
                 titles.add(title);
                // Log.e("licong","aaa"+titles);
-                String image = mTitlelist.getDataList().get(i).getContList().get(b).getPic();
+                String image = mVideolist.getDataList().get(i).getContList().get(b).getPic();
                 images.add(image);
 
         }

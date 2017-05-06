@@ -34,6 +34,8 @@ public class MainInterfaceAdapter extends RecyclerView.Adapter<MainInterfaceAdap
     private List<String> titles;
     private List<String> images;
     private List<String> contids;
+    private OnItemClickListener mOnItemClickListener;
+    private OnItemLongClickListener mOnItemLongClickListener;
     //定义一个内部类ViewHolder，继承RecyclerView.ViewHolder
     static  class  ViewHolder extends  RecyclerView.ViewHolder{
         View InternetVideoView;
@@ -62,22 +64,22 @@ public class MainInterfaceAdapter extends RecyclerView.Adapter<MainInterfaceAdap
     //并把加载出来的布局传入构造函数中
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view=LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.main_interface,parent,false);
-//        ViewHolder holder=new ViewHolder(view);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.main_interface, parent, false);
+        final ViewHolder holder = new ViewHolder(view);
 
         //给item设置点击事件
-        final ViewHolder holder=new ViewHolder(view);
-        holder.InternetVideoView.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                int position = holder.getAdapterPosition();
-                Intent intent_PlayVideo = new Intent(context, PlayLocalVideoActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("video", contids.get(position));
-
-                intent_PlayVideo.putExtras(bundle);
-                context.startActivity(intent_PlayVideo);
+//        final ViewHolder holder=new ViewHolder(view);
+//        holder.InternetVideoView.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                int position = holder.getAdapterPosition();
+//                Intent intent_PlayVideo = new Intent(context, PlayLocalVideoActivity.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("video", contids.get(position));
+//                intent_PlayVideo.putExtras(bundle);
+//                context.startActivity(intent_PlayVideo);
+        //----------------------------------------------------------------
 //                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //                    @Override
 //                    public void onItemClick(AdapterView<?> parent, View view, int position,
@@ -89,8 +91,31 @@ public class MainInterfaceAdapter extends RecyclerView.Adapter<MainInterfaceAdap
 //                        startActivity(intent_PlayVideo);
 //                    }
 //                });
-            }
-        });
+//            }
+//        });
+        //-----------------------------------------------------------
+        if (mOnItemClickListener != null) {
+            //为ItemView设置监听器
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = holder.getLayoutPosition(); // 1
+                    mOnItemClickListener.onItemClick(holder.itemView, position); // 2
+                }
+            });
+        }
+        if (mOnItemLongClickListener != null) {
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    int position = holder.getLayoutPosition();
+                    mOnItemLongClickListener.onItemLongClick(holder.itemView, position);
+                    //返回true 表示消耗了事件 事件不会继续传递
+                    return true;
+                }
+            });
+        }
+        //------------------------------------------------------------------
         return holder;
     }
     //告诉recyclerView有多少子项，返回长度
@@ -110,7 +135,21 @@ public class MainInterfaceAdapter extends RecyclerView.Adapter<MainInterfaceAdap
           holder.mainInterfaceText.setText(titles.get(position));
 
     }
+//------------------------------------------------------------------
+    public interface OnItemClickListener{
+        void onItemClick(View view,int position);
+    }
 
+    public interface OnItemLongClickListener{
+        void onItemLongClick(View view,int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener mOnItemClickListener){
+        this.mOnItemClickListener = mOnItemClickListener;
+    }
+
+    public void setOnItemLongClickListener(OnItemLongClickListener mOnItemLongClickListener) {
+        this.mOnItemLongClickListener = mOnItemLongClickListener;
+    }
 
 }
 
