@@ -345,7 +345,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         //退出
         else if (id == R.id.nav_dropout) {
-                finish();
+            int pid = android.os.Process.myPid();	//获取当前应用程序的PID
+            android.os.Process.killProcess(pid);	//杀死当前进程
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.main_layout);

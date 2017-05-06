@@ -156,6 +156,11 @@ public class LocalVideoActivity extends Activity {
         sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory().getAbsolutePath())));
         super.onDestroy();
     }
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent_main = new Intent(LocalVideoActivity.this,MainActivity.class);
+        LocalVideoActivity.this.startActivity(intent_main);
+    }
 
 }
 
