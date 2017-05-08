@@ -3,7 +3,8 @@ package com.licong.graduationproject.bean;
 import java.util.List;
 
 /**
- * Created by licong on 5/6/17.
+ * Created by licong on 5/6/17.'
+ * 网络视频信息
  */
 
 public class VideoMessage {

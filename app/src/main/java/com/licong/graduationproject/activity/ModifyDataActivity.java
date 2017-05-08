@@ -21,16 +21,20 @@ public class ModifyDataActivity extends AppCompatActivity  implements View.OnCli
     private EditText mNickName;
     private EditText mGender;
     private EditText mSignature;
+    //返回
     private Button mProfilebackdata_button;
+    //确认
     private Button mProfile_data_yes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify_data);
+        //创建数据库的流程
         mUserDatabaseHelper = new UserDatabaseHelper(this,"Users.db",null,1);
         mNickName =(EditText)findViewById(R.id.nickname_edittext);
         mGender =(EditText)findViewById(R.id.gender_edittext);
         mSignature =(EditText)findViewById(R.id.signature_edittext);
+        //点击事件按钮
         mProfile_data_yes =(Button)findViewById(R.id.profile_data_yes);
         mProfile_data_yes.setOnClickListener(this);
         mProfilebackdata_button =(Button)findViewById(R.id.profilebackdata_button);
@@ -51,6 +55,7 @@ public class ModifyDataActivity extends AppCompatActivity  implements View.OnCli
                 String inputText_mNickName=mNickName.getText().toString();
                 String inputText_mGender =mGender.getText().toString();
                 String inputText_mSignature =mSignature.getText().toString();
+                //放入数据到数据库
                     ContentValues values = new ContentValues();
                     values.put("nickname", inputText_mNickName);
                     values.put("gender", inputText_mGender);

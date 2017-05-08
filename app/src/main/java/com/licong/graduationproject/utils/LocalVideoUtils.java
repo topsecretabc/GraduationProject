@@ -25,6 +25,7 @@ public class LocalVideoUtils implements AbstructLocalVideo{
     public List<LocalVideo> getList() {
         List<LocalVideo> list = null;
         if (context != null) {
+            //从系统获得时间的内容提供者内容
             Cursor cursor = context.getContentResolver().query(
                     MediaStore.Video.Media.EXTERNAL_CONTENT_URI, null, null,
                     null, null);

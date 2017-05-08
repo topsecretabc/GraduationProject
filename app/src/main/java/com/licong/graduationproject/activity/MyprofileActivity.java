@@ -33,7 +33,7 @@ public class MyprofileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.myprofile_layout);
         mNickname=(TextView)findViewById(R.id.nickname_textview);
-        UID=(TextView)findViewById(R.id.UID_textview);
+//        UID=(TextView)findViewById(R.id.UID_textview);
         mGender=(TextView)findViewById(R.id.gender_setting);
         mSignature=(TextView)findViewById(R.id.signature_setting);
         mUserDatabaseHelper = new UserDatabaseHelper(this,"Users.db",null,1);
@@ -45,11 +45,11 @@ public class MyprofileActivity extends AppCompatActivity {
         if (cursor.moveToFirst()){
             do {
                 String nickName=cursor.getString(cursor.getColumnIndex("nickname"));
-                String mUID=cursor.getString(cursor.getColumnIndex("id"));
+//                String mUID=cursor.getString(cursor.getColumnIndex("id"));
                 String gender=cursor.getString(cursor.getColumnIndex("gender"));
                 String signature=cursor.getString(cursor.getColumnIndex("signature"));
                 mNickname.setText(nickName);
-                UID.setText(mUID);
+//                UID.setText(mUID);
                 mGender.setText(gender);
                 mSignature.setText(signature);
             }while (cursor.moveToNext());

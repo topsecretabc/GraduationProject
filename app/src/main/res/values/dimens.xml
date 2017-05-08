@@ -17,4 +17,5 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="image">80dp</dimen>
+    <dimen name="main_words">13sp</dimen>
 </resources>

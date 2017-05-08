@@ -29,6 +29,7 @@ public class PlayLocalVideoActivity extends AppCompatActivity {
         //取得视频地址
         String mVideoUri = playVideoFile.getPath();
         String mVideoTitle = playVideoFile.getTitle();
+        //加载播放器
         mPlayerView=(IjkPlayerView)findViewById(R.id.local_player_view);
         Uri uri=Uri.parse(mVideoUri);
         mPlayerView.init()

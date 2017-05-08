@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 //-------------------------------------------------------------------------------------
                     mainInterfaceAdapter.setOnItemClickListener(new MainInterfaceAdapter.OnItemClickListener() {
+                        //主界面item的点击事件，跳转到video界面同时将contid（视频id）传过去
                         @Override
                         public void onItemClick(View view, int position) {
                             Toast.makeText(MainActivity.this, "click " + images.get(position), Toast.LENGTH_SHORT).show();
@@ -110,8 +111,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mNavigationView.setNavigationItemSelectedListener(this);
         //第一个参数指定瀑布流布局的列数，第二个指定布局的排列方向
         StaggeredGridLayoutManager layoutManager =
-                new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+                new StaggeredGridLayoutManager(3
+                        , StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
+//        使得图片不到处滑动
+        layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
 
         //网络请求
         sendRequestWithOkHttp();
@@ -120,18 +124,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //初始化整个主界面
         initFace();
     }
+    //初始化toorbar
     public void initFace(){
-        //得到RecyclerView的实例
-        recyclerView = (RecyclerView) findViewById(R.id.main_recycler);
-        //得到NavigationView的实例
-        mNavigationView = (NavigationView) findViewById(R.id.nav_view);
-        //设置mNavigationView中item的监听事件
-        mNavigationView.setNavigationItemSelectedListener(this);
-        //第一个参数指定瀑布流布局的列数，第二个指定布局的排列方向
-        StaggeredGridLayoutManager layoutManager =
-                new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
-
         //得到Toolbar的实例传入setSupportActionBar()
         // 既使用了Toolbar又让它外观与功能与ActionBar一致
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);

@@ -45,7 +45,7 @@ public class WelcomePageActivity extends AppCompatActivity implements  BottomNav
         bottomNavigationBar.setTabSelectedListener(this);
 
     }
-    //设置每个碎片
+    //设置每个碎片,加载图片
     @Override
     public void onTabSelected(int position) {
            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

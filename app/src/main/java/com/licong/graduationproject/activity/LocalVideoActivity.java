@@ -69,6 +69,7 @@ public class LocalVideoActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
+                //跳转到PlayLocalVideoActivity同时将listvideo的信息先放入Bundle中再传递过去
                 Intent intent_PlayVideo = new Intent(LocalVideoActivity.this, PlayLocalVideoActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("video", listVideos.get(position));
@@ -76,6 +77,7 @@ public class LocalVideoActivity extends Activity {
                 startActivity(intent_PlayVideo);
             }
         });
+        //加载图片
        loadImages();
     }
 
@@ -102,14 +104,14 @@ public class LocalVideoActivity extends Activity {
             }
         }
     }
-    //因为是耗时操作所以放入图片是需要开启一个新的线程
+    //放入图片
     private void addImage(LoadedImage... value) {
         for (LoadedImage image : value) {
             localVideoListViewAdapter.addPhoto(image);
             localVideoListViewAdapter.notifyDataSetChanged();
         }
     }
-    //同loadImages()中的getLastNonConfigurationInstance()一起做activity状态的保存和保持。
+    //加载图片，同loadImages()中的getLastNonConfigurationInstance()一起做activity状态的保存和保持。
     @Override
     public Object onRetainNonConfigurationInstance() {
         final ListView grid = listView;
@@ -131,7 +133,7 @@ public class LocalVideoActivity extends Activity {
         bitmap = ThumbnailUtils.extractThumbnail(bitmap, width, height, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
         return bitmap;
     }
-    //因为加载图片是一个耗时操作，所以需要开启一个线程池
+    //因为加载图片是一个耗时操作，所以开启一个线程池，做异步处理
     class LoadImagesFromSDCard extends AsyncTask<Object, LoadedImage, Object> {
         @Override
         protected Object doInBackground(Object... params) {
@@ -156,6 +158,7 @@ public class LocalVideoActivity extends Activity {
         sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory().getAbsolutePath())));
         super.onDestroy();
     }
+    //返回键的复写，因为原先除了一点buff，按返回键程序会直接退出，所以复写返回键用以回到主界面
     public void onBackPressed() {
         super.onBackPressed();
         Intent intent_main = new Intent(LocalVideoActivity.this,MainActivity.class);

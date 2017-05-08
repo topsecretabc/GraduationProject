@@ -9,7 +9,7 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.licong.graduationproject.db.MyDatabaseHelper;
-
+//另一个app的内容提供者
 public class TextAppProvider extends ContentProvider {
 
     public  static final int TEXT_CONTENT = 0;

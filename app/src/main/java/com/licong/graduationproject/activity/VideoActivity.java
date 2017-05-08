@@ -12,18 +12,10 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-;
-
-
 import com.dl7.player.media.IjkPlayerView;
 import com.google.gson.Gson;
 import com.licong.graduationproject.API.API;
 import com.licong.graduationproject.R;
-import com.licong.graduationproject.adapter.MainInterfaceAdapter;
-import com.licong.graduationproject.bean.IntenetVideo;
-import com.licong.graduationproject.bean.LocalVideo;
 import com.licong.graduationproject.bean.VideoMessage;
 
 import okhttp3.OkHttpClient;
@@ -36,6 +28,7 @@ public class  VideoActivity extends AppCompatActivity {
     private String contid;
     private VideoMessage mVideos ;
     String urls;
+    //主线程收到消息初始化播放器
     Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -46,6 +39,8 @@ public class  VideoActivity extends AppCompatActivity {
                     Uri uri=Uri.parse(urls);
                     mPlayerView.init()
                             .setVideoPath(uri)
+                            .enableDanmaku()        // 加载弹幕
+                            .setDanmakuSource(getResources().openRawResource(R.raw.bili))
                             .setMediaQuality(IjkPlayerView.MEDIA_QUALITY_HIGH);
             }
 

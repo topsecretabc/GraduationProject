@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by licong on 5/5/17.
+ * 网络视频主页信息
  */
 
 public class IntenetVideo {

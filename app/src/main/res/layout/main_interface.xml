@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="@dimen/jiange"
+        android:textSize="@dimen/main_words"
 
         />
 </LinearLayout>

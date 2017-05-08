@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.sax.StartElementListener;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +35,7 @@ public class MainInterfaceAdapter extends RecyclerView.Adapter<MainInterfaceAdap
     private List<String> titles;
     private List<String> images;
     private List<String> contids;
+
     private OnItemClickListener mOnItemClickListener;
     private OnItemLongClickListener mOnItemLongClickListener;
     //定义一个内部类ViewHolder，继承RecyclerView.ViewHolder
@@ -131,11 +133,14 @@ public class MainInterfaceAdapter extends RecyclerView.Adapter<MainInterfaceAdap
         Glide
                 .with(context)//上下文
                 .load(images.get(position))//url地址
+                .override(500,(int)(100 + Math.random() * 300))//设置宽高
                 .into(holder.mainInterfaceImage);//要放入的地方
           holder.mainInterfaceText.setText(titles.get(position));
 
+
     }
 //------------------------------------------------------------------
+    //设置item的点击事件的方法
     public interface OnItemClickListener{
         void onItemClick(View view,int position);
     }

@@ -38,18 +38,17 @@ public class WelcomeFragmentFour extends BaseFragment implements View.OnClickLis
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        //将布局加载进来
         View view = inflater.inflate(R.layout.welcome_view4, container, false);
         ImageView imageView =(ImageView)view.findViewById(R.id.welcome_view4);
         Button to_main_button = (Button)view.findViewById(R.id.btn_main);
-        Log.e("wanghao","to_main_button");
         to_main_button.setOnClickListener(this);
         AnimationDrawable animationDrawable = (AnimationDrawable) imageView.getDrawable();
         animationDrawable.start();
         return view;
     }
 
-
+    //进入主页的按钮
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

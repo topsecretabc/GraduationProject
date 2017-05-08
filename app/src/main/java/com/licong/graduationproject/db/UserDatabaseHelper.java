@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by licong on 5/3/17.
+ *  用户信息帮助类
  */
 
 public class UserDatabaseHelper extends SQLiteOpenHelper {
