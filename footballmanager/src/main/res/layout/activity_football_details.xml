@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jeff.footballmanager.activity.FootballDetailsActivity" >
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_orange_light">
+        
+        <ImageView 
+        android:id="@+id/imgMenu2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        />
+    
+	<TextView
+	    android:id="@+id/menuTitle2"
+	    android:layout_width="0dp"
+	    android:text="@string/title"
+	    android:gravity="center_horizontal|center_vertical"
+	    android:layout_height="match_parent"
+	    android:textColor="@android:color/white"
+	    android:textSize="22sp"
+	    android:layout_weight="1"/>
+	
+	<ImageView 
+        android:id="@+id/backTo2"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        />
+	
+    </LinearLayout>
+    
+    <ListView 
+        android:id="@+id/foot_details_listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+    </ListView>
+
+    
+    
+</LinearLayout>

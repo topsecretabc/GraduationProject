@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -70,16 +71,17 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                String account = accountEdit.getText().toString();
-                String password = passwordEdit.getText().toString();
+                String accountt = accountEdit.getText().toString();
+                String passwordd = passwordEdit.getText().toString();
                 //判断密码是否正确
-                if (account.equals(R.string.admin) && password.equals(R.string.password)) {
+                Log.e("lciong","aaaa"+accountt.equals(R.string.admin)+""+passwordd.equals(R.string.password));
+                if (accountt.equals(getString(R.string.admin)) && passwordd.equals(getString(R.string.password))) {
                     editor = preferences.edit();
                     if (remeberpassword.isChecked()) {
                         //判断是否记住密码
                         editor.putBoolean("记住密码", true);
-                        editor.putString("您的用户名", account);
-                        editor.putString("请输入密码", password);
+                        editor.putString("您的用户名", accountt);
+                        editor.putString("请输入密码", passwordd);
                     } else {
                         editor.clear();
                     }
@@ -95,22 +97,20 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-        //用户名和密码输入框点击事件
-        passwordEdit.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                mLeftLogo.setImageResource(R.drawable.ic_22_hide);
-                mRightLogo.setImageResource(R.drawable.ic_33_hide);
-            }
-        });
-        accountEdit.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                mLeftLogo.setImageResource(R.drawable.ic_22);
-                mRightLogo.setImageResource(R.drawable.ic_33);
-            }
-        });
 
+        accountEdit.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus) {
+                    mLeftLogo.setImageResource(R.drawable.ic_22);
+                    mRightLogo.setImageResource(R.drawable.ic_33);
+                } else {
+                    mLeftLogo.setImageResource(R.drawable.ic_22_hide);
+                    mRightLogo.setImageResource(R.drawable.ic_33_hide);
+                }
+            }
+
+        });
     }
 }
 

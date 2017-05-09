@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:padding="12dp"
+    android:orientation="horizontal"
+    tools:context="com.jeff.footballmanager.activity.FootballDetailsActivity">
+        
+    <LinearLayout 
+        android:id="@+id/lineay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="6dp">
+        
+        <RelativeLayout 
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+            <TextView 
+                android:id="@+id/details_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+				android:textSize="18dp"
+				android:layout_centerVertical="true"
+                />
+            <TextView 
+                android:id="@+id/details_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/details_name"
+                android:paddingLeft="10dp"
+                android:layout_toRightOf="@id/details_name"
+                android:textSize="14dp"
+                android:layout_alignBaseline="@+id/details_name"
+                />
+        </RelativeLayout>
+        
+        <LinearLayout 
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView 
+                    android:id="@+id/details_tel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    />
+        </LinearLayout>
+        
+        </LinearLayout>
+        
+    <CheckBox android:id="@+id/mycheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingRight="2dp"
+        android:visibility="gone"/>
+</LinearLayout>

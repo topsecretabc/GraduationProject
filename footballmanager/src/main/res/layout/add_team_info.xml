@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+  >
+    <include 
+	    layout="@layout/add_info_title"
+	  	/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+    
+    <EditText 
+        android:id="@+id/add_team_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/teamName"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:layout_marginTop="20dp"/>
+    
+    <EditText 
+        android:id="@+id/add_team_Trainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:hint="@string/teamTrainer"/>
+    
+    <EditText 
+        android:id="@+id/add_team_NativePlace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginTop="20dp"
+        android:hint="@string/teamNativePlace"
+        android:maxLength="10"/>
+
+    <EditText 
+    android:id="@+id/add_team_Sologan"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:singleLine="true"
+    android:hint="@string/teamSologan"
+    android:maxLength="20"/>
+      </LinearLayout>
+</LinearLayout>

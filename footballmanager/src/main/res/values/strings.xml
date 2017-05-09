@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">足球管理系统</string>
+    <string name="action_settings">设置</string>
+    <string name="chooseTeam">要加入的球队</string>
+    <string name="choosePosition">球队角色</string>
+    <string name="title_activity_spalash">启动</string>
+    <string name="welcome">欢迎您使用足球管理系统</string>
+    <string name="back">返回</string>
+
+    <string name="title">首页</string>
+    <string name="player">球员管理</string>
+    <string name="competition">比赛管理</string>
+    <string name="techno_count">技术统计</string>
+    <string name="team">球队管理</string>
+    <string name="footballmanager">足球管理</string>
+    <string name="personmanager">个人管理</string>
+    <string name="help_about">疑问帮助</string>
+
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="pull_to_refresh">下拉可以刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新…</string>
+    <string name="not_updated_yet">暂未更新过</string>
+    <string name="updated_at">上次更新于%1$s前</string>
+    <string name="updated_just_now">刚刚更新</string>
+    <string name="time_error">时间有问题</string>
+
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_person_manager">PersonManagerActivity</string>
+    <string name="title_activity_add_football_info">AddFootballInfoActivity</string>
+
+    <string name="userName">请输入用户名</string>
+    <string name="inputOldPsd">请输入旧密码</string>
+    <string name="inputNewPsd">请输入新密码</string>
+    <string name="inputNewPsdAgain">请再次输入新密码</string>
+    <string name="userAddress">请输入住址</string>
+    <string name="userAge">请输入年龄</string>
+    <string name="userPsd">请输入密码</string>
+    <string name="forget_psd">忘记密码</string>
+    <string name="psdNotSame">两次输入的新密码不一致</string>
+
+    <string name="login">立即登录</string>
+    <string name="register">注册账号</string>
+    <string name="remepassword">忘记密码</string>
+    <string name="auto_login">自动登录</string>
+    <string name="save">保存</string>
+    <string name="edit">编辑信息</string>
+    <string name="add">添加信息</string>
+    <string name="addInfo">添加信息</string>
+    <string name="rank">排名</string>
+
+    <string name="teamName">请输入队名</string>
+    <string name="teamTrainer">请输入教练名</string>
+    <string name="teamSologan">请输入球队口号</string>
+    <string name="teamNativePlace">请输入球队归属</string>
+    <string name="inputPlayerName">请输入球员名</string>
+    <string name="inputPlayerHight">请输入身高(cm)</string>
+    <string name="inputPlayerWeight">请输入体重(kg)</string>
+    <string name="inputPlayerCountry">请输入国籍</string>
+    <string name="inputPlayerTel">请输入电话号码</string>
+    <string name="inputPlayerRole">请输入球员位置</string>
+    <string name="inputPlayerAge">请输入年龄</string>
+    <string name="teamOneInfo">请选择获胜队伍</string>
+    <string name="teamTwoInfo">请选择失败队伍</string>
+    <string name="competitionInfo">请填写比赛信息</string>
+    <string name="inputHighPlayer">请选择得分最高球员</string>
+    <string name="inputAssistingPlayer">请选择助攻最高球员</string>
+    <string name="inputHightScore">请输入此球员得分</string>
+    <string name="inputAssistingScore">请输入助攻数</string>
+    <string name="inputWinScore">请输入获胜队分数</string>
+    <string name="inputSecondScore">请输入失败队分数</string>
+
+    <string name="inputEditPlayerName">球员名：</string>
+    <string name="inputEditPlayerHight">球员身高(cm)：</string>
+    <string name="inputEditPlayerWeight">球员体重(kg)：</string>
+    <string name="inputEditPlayerCountry">球员国籍：</string>
+    <string name="inputEditPlayerTel">球员电话号码：</string>
+    <string name="inputEditPlayerRole">球员位置：</string>
+    <string name="inputEditPlayerPosition">球员定位：</string>
+    <string name="inputEditPlayerAge">球员年龄：</string>
+    <string name="inputEditTeamName">球队名：</string>
+    <string name="inputEditTeamTrainer">球队教练：</string>
+    <string name="inputEditTeamNativePlace">球队归属：</string>
+    <string name="inputEditTeamSlogan">球队口号：</string>
+    <string name="inputEditChampionTeam">胜利队伍：</string>
+    <string name="inputEditSecondTeam">失败队伍：</string>
+    <string name="inputEditChampionScore">胜方得分：</string>
+    <string name="inputEditSecondScore">败方得分：</string>
+    <string name="inputEditHighPlayer">最佳得分球员：</string>
+    <string name="inputEditHighScore">球员得分：</string>
+    <string name="inputEditAssistingPlayer">最佳助攻球员：</string>
+    <string name="inputEditAssistingScore">球员助攻：</string>
+
+    <string name="title_activity_team_rank">TeamRankActivity</string>
+    <string name="loading">努力加载中...</string>
+    <string name="gonow">立即进入</string>
+    <string name="modifyPsd">修改密码</string>
+    <string name="modifyPsd_not_for_third_other">说明:非第三方登录可修改登录密码</string>
+    <string name="noplayer">此球队暂无球员哦</string>
+    <string name="editInfo">编辑信息</string>
+    <string name="exit_and_clear">注销登录</string>
+    <string name="exit_and_clear_info">说明:清除用户登录信息并退出</string>
+    <string name="title_activity_help">HelpActivity</string>
+
+    <string name="toutiao">头条</string>
+    <string name="yule">娱乐</string>
+    <string name="junshi">军事</string>
+    <string name="qiche">汽车</string>
+    <string name="caijing">财经</string>
+    <string name="xiaohua">笑话</string>
+    <string name="tiyu">体育</string>
+    <string name="keji">科技</string>
+
+    <string name="errorconnect">连接服务器出错，请重试！</string>
+    <string name="logining">正在登录，请稍候...</string>
+    <string name="loadding_hard">努力加载中......</string>
+    <string name="success_opeation">操作成功！</string>
+    <string name="fault_opeation">操作失败,请重试！</string>
+    <string name="no_data">还没有添加数据哦！</string>
+    <string name="no_rank_data_to_add">暂时还没有排名信息哦，快先去添加比赛数据吧！</string>
+    <string name="can_not_null">信息不能为空！</string>
+    <string name="team_is_null">暂无球队哦！</string>
+    <string name="player_is_null">暂无球员哦！</string>
+    <string name="team_null_to_add">暂无球队哦,快先去添加球队吧！</string>
+    <string name="player_null_to_add">暂无球员哦,快先去添加球员吧！</string>
+    <string name="team_can_not_same">比赛球队不能为同一支！</string>
+    <string name="modify_psd_ok">修改成功，请重新登录！</string>
+
+    <string name="count_info">说明:查看统计信息</string>
+    <string name="manager_competition">说明:管理球赛信息</string>
+    <string name="manager_team">说明:管理所有球队信息</string>
+    <string name="manager_player">说明:管理所有球员信息</string>
+    <string name="rank_player_assting">单场最高助攻球员排名</string>
+    <string name="rank_player_score">单场最高得分球员排名</string>
+    <string name="rank_player_history_assting">历史最高助攻次数球员排名</string>
+    <string name="rank_player_history_score">历史最高得分次数球员排名</string>
+    <string name="rank_team">球队总排名</string>
+    <string name="count_asst">统计单场最高助攻数球员排名</string>
+    <string name="count_score">统计单场最高得分球员排名</string>
+    <string name="count_his_assi">统计历史助攻数最高次数球员排名</string>
+    <string name="count_his_scor">统计历史得分最高次数球员排名</string>
+    <string name="count_team">统计获胜球队得分排名</string>
+
+    <string name="win_">赢：</string>
+    <string name="lost_">输：</string>
+    <string name="score_">分数：</string>
+    <string name="native_place_">归属：</string>
+    <string name="trainer_">教练：</string>
+    <string name="role_">位置：</string>
+    <string name="mobile_">电话：</string>
+    <string name="sure_to_delete">您确认要删除吗 </string>
+    <string name="register_ok">注册成功,立即去登录吧!</string>
+    <string name="psd_info">您的密码为:</string>
+    <string name="hint_info_">提示</string>
+    <string name="ok">确认</string>
+    <string name="cancel">取消</string>
+    <string name="cancel_login">取消登录</string>
+    <string name="login_fault">登录失败，请重试！</string>
+    <string name="exit_app">再次点击退出程序</string>
+    <string name="to_register_info">未注册用户不能修改哟，赶紧去注册一个新用户吧！</string>
+
+    <string name="help">使用说明:\n本程序用来记录足球比赛，球队球员信息等。适用于所有高校足球队，以及足球俱乐部等使用。
+        \n\n另：使用本程序完全免费。</string>
+    <string name="about">作者：jeff\n联系方式：\n微信：djeff1994\n邮箱：18002405263@163.com</string>
+    <string name="thirdlogin">第三方登录：</string>
+    <string name="check_delete">勾选以删除</string>
+</resources>

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -158,12 +159,24 @@ public class LocalVideoActivity extends Activity {
         sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory().getAbsolutePath())));
         super.onDestroy();
     }
-    //返回键的复写，因为原先除了一点buff，按返回键程序会直接退出，所以复写返回键用以回到主界面
+    //重写Activity的onKeyDown()方法，因为原先出了一点buff，按返回键程序会直接退出，所以复写返回键用以回到主界面
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+//            //TODO something
+//            Intent intent_main = new Intent(LocalVideoActivity.this,MainActivity.class);
+//            LocalVideoActivity.this.startActivity(intent_main);
+//            return true;
+//        }
+//        return super.onKeyDown(keyCode, event);
+//    }
+
+    @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent intent_main = new Intent(LocalVideoActivity.this,MainActivity.class);
         LocalVideoActivity.this.startActivity(intent_main);
+        finish();
+        //别加super.onBackPressed();不然又去调用默认的back处理方式了
     }
-
 }
 

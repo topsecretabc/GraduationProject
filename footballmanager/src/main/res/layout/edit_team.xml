@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <AbsoluteLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+		<include layout="@layout/edit_info_title"/>
+    </AbsoluteLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp">
+        
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:scrollbars="none">
+	    
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        
+     <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditTeamName"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+        android:id="@+id/edit_team_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:editable="false"
+        android:maxLength="10"
+        android:layout_marginTop="0dp"/>
+    <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditTeamTrainer"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+        android:id="@+id/edit_team_trainer"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:maxLength="8"
+        />
+    <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditTeamNativePlace"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+        android:id="@+id/edit_team_native_place"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:maxLength="12"/>
+	<TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditTeamSlogan"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+	    android:id="@+id/edit_team_slogan"
+	    android:layout_width="match_parent"
+	    android:singleLine="true"
+	    android:layout_height="wrap_content"
+	    android:maxLength="10"/>
+    
+    </LinearLayout>
+    
+	</LinearLayout>  
+	  
+	</ScrollView>
+	</LinearLayout>
+</LinearLayout>

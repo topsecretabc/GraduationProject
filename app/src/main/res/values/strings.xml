@@ -68,8 +68,8 @@
     <string name="nicknameedit">请输入您的昵称</string>
     <string name="genderedit">“男”或“女”</string>
     <string name="shuruqianming">请输入您的签名</string>
-    <string name="admin">admin</string>
-    <string name="password">123456</string>
+    <string name="admin">a</string>
+    <string name="password">1</string>
     <string name="jizhupw">记住密码</string>
     <string name="jilao">你是不是基佬哦！</string>
 </resources>

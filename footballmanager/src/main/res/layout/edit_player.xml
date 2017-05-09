@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <AbsoluteLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+		<include layout="@layout/edit_info_title"/>
+    </AbsoluteLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp">
+        
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:scrollbars="none">
+	    
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        
+     <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditPlayerName"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+        android:id="@+id/edit_player_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:maxLength="10"
+        android:editable="false"
+        android:layout_marginTop="0dp"/>
+    <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditPlayerHight"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+        android:id="@+id/edit_player_hight"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:maxLength="3"
+        android:inputType="number"
+        />
+    <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditPlayerWeight"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+        android:id="@+id/edit_player_weight"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:maxLength="3"/>
+	<TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditPlayerCountry"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+    android:id="@+id/edit_player_country"
+    android:layout_width="match_parent"
+    android:singleLine="true"
+    android:layout_height="wrap_content"
+    android:maxLength="10"/>
+    <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditPlayerAge"
+         android:layout_marginTop="20dp"/>
+     <EditText 
+        android:id="@+id/edit_player_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:singleLine="true"
+        android:maxLength="3"
+        />
+    <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditPlayerTel"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+        android:id="@+id/edit_player_tel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:singleLine="true"
+        android:maxLength="11"/>
+	<TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditPlayerRole"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+    android:id="@+id/edit_player_role"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:singleLine="true"
+    android:maxLength="4"/>
+    <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditPlayerPosition"
+         android:layout_marginTop="20dp"/>
+  	<EditText 
+    android:id="@+id/edit_player_position"
+	android:editable="false"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:singleLine="true"
+    android:maxLength="4"/>
+    
+    </LinearLayout>
+    
+	</LinearLayout>  
+	  
+	</ScrollView>
+	</LinearLayout>
+</LinearLayout>

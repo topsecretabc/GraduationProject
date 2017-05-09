@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="46dp"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:background="@android:color/holo_orange_light" >
+    
+    <LinearLayout 
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|left"
+        android:layout_height="match_parent">
+        
+        <ImageView 
+            android:id="@+id/addInfoImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/left171"
+            android:paddingLeft="10dp"/>
+        
+    </LinearLayout>
+    
+     <LinearLayout 
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_height="match_parent">
+        
+        <TextView 
+            android:id="@+id/addInfoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rank"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"/>
+        
+    </LinearLayout>
+    
+     <LinearLayout 
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|right"
+        android:layout_height="match_parent"
+        android:paddingRight="10dp">
+        
+        <ImageView 
+            android:id="@+id/addInfoSave"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ok"
+            />
+        
+    </LinearLayout>
+
+</LinearLayout>

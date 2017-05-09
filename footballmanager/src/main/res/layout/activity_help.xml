@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jeff.footballmanager.activity.HelpActivity"
+    android:orientation="vertical" >
+
+	    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_orange_light"
+        >
+        
+        <ImageView 
+        android:id="@+id/imgMenuperson4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_gravity="center"
+        android:src="@drawable/left171"
+        android:layout_marginLeft="10dp"
+        />
+    
+	<TextView
+	    android:id="@+id/menuTitleperson4"
+	    android:layout_width="0dp"
+	    android:text="@string/help_about"
+	    android:gravity="center_horizontal|center_vertical"
+	    android:layout_height="match_parent"
+	    android:textColor="@android:color/white"
+	    android:textSize="22sp"
+	    android:layout_weight="1"/>
+	
+	<ImageView 
+        android:id="@+id/backToperson4"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        />
+	
+    </LinearLayout>
+    
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:paddingLeft="10dp"
+	    android:paddingRight="10dp"
+	    android:orientation="vertical">
+	    
+    <TextView 
+        android:id="@+id/help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/help"/>
+
+    <TextView 
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        />
+	</LinearLayout>
+</LinearLayout>

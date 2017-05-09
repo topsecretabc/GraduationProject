@@ -3,6 +3,8 @@ package com.licong.graduationproject.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.design.widget.NavigationView;
@@ -319,6 +321,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         //跳转到个人资料
         else if (id == R.id.nav_myprofile) {
+
             Intent intent_to_myprofile = new Intent(MainActivity.this, MyprofileActivity.class);
             startActivity(intent_to_myprofile);
         }
@@ -326,6 +329,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else if (id == R.id.nav_collection) {
             Intent intent_to_collection= new Intent(MainActivity.this,LocalVideoActivity.class);
             startActivity(intent_to_collection);
+            finish();
         }
         //跳转到设置与帮助
         else if (id == R.id.nav_settings) {
@@ -353,5 +357,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         editor.putBoolean("isFirstIn", true);
         // 提交修改
         editor.commit();
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

@@ -6,6 +6,7 @@ package com.licong.graduationproject.utils;
  */
 
 import android.graphics.Bitmap;
+
 public class LoadedImage {
     Bitmap mBitmap;
     public LoadedImage(Bitmap bitmap) {

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="playPosition">
+        <item>球员</item>
+        <item>队长</item>
+    </string-array>
+</resources>

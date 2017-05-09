@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="46dp"
+    android:orientation="horizontal"
+    android:background="@android:color/holo_orange_light">
+
+    <com.jeff.footballmanager.utils.RoundImageView
+        android:id="@+id/imgMenu"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/bgpic"
+        android:layout_marginLeft="10dp"/>
+    
+	<TextView
+	    android:id="@+id/menuTitle"
+	    android:layout_width="wrap_content"
+	    android:text="@string/title"
+	    android:gravity="center_horizontal|center_vertical"
+	    android:layout_height="match_parent"
+	    android:textColor="@android:color/white"
+	    android:textSize="22sp"
+	    android:layout_centerInParent="true"
+	    />
+	
+	<ImageView 
+        android:id="@+id/backTo"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:src="@drawable/setting"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        />
+	
+</RelativeLayout>

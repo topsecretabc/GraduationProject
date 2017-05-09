@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <AbsoluteLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+		<include layout="@layout/edit_info_title"/>
+    </AbsoluteLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp">
+        
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:scrollbars="none">
+	    
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        
+     <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditChampionTeam"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+        android:id="@+id/edit_ChampionTeam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+       	android:editable="false"
+        android:layout_marginTop="0dp"/>
+    <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditChampionScore"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+        android:id="@+id/edit_ChampionScore"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:maxLength="4"
+        android:inputType="number"
+        />
+    <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditHighPlayer"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+        android:id="@+id/edit_HighPlayer"
+        android:layout_width="match_parent"
+       	android:editable="false"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:maxLength="10"/>
+	<TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditHighScore"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+    android:id="@+id/edit_HighScore"
+    android:layout_width="match_parent"
+    android:singleLine="true"
+    android:layout_height="wrap_content"
+    android:maxLength="4"/>
+    <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditSecondTeam"
+         android:layout_marginTop="20dp"/>
+     <EditText 
+        android:id="@+id/edit_SecondTeam"
+        android:layout_width="match_parent"
+       	android:editable="false"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:maxLength="10"
+        />
+    <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditSecondScore"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+        android:id="@+id/edit_SecondScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:singleLine="true"
+        android:maxLength="4"/>
+	<TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditAssistingPlayer"
+         android:layout_marginTop="20dp"/>
+    <EditText 
+    android:id="@+id/edit_AssistingPlayer"
+    android:layout_width="match_parent"
+   	android:editable="false"
+    android:layout_height="wrap_content"
+    android:singleLine="true"
+    android:maxLength="10"/>
+    <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/inputEditAssistingScore"
+         android:layout_marginTop="20dp"/>
+  	<EditText 
+    android:id="@+id/edit_AssistingScore"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:singleLine="true"
+    android:maxLength="2"/>
+    
+    </LinearLayout>
+    
+	</LinearLayout>  
+	  
+	</ScrollView>
+	</LinearLayout>
+</LinearLayout>

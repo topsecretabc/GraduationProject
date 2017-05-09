@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@android:color/white"
+    android:padding="5dp">
+    
+       <LinearLayout 
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:paddingTop="6dp">
+            
+       <GridView
+           android:id="@+id/news_gridview"
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:textAlignment="center"
+           android:stretchMode="columnWidth"
+           android:gravity="center"
+           >
+       </GridView>    
+       
+        <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/holo_orange_dark"/>
+        </LinearLayout>
+    
+</RelativeLayout>

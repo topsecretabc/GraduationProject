@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "25.0.0"
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
+    defaultConfig {
+        multiDexEnabled true
+        applicationId "com.jeff.footballmanager"
+        minSdkVersion 14
+        targetSdkVersion 19
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile files('libs/httpclient-4.3.1.jar')
+    compile files('libs/image-loader-1.8.6.jar')
+    compile files('libs/mta-sdk-1.6.2.jar')
+    compile files('libs/open_sdk_r5785_lite.jar')
+    compile files('libs/slidingmenu.jar')
+    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+}
