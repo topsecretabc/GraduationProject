@@ -37,6 +37,7 @@
                 android:layout_width="@dimen/setting_yuan"
                 android:layout_height="@dimen/setting_yuan"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_below="@id/play_setting"
                 android:background="@drawable/xiaokongxinhuiyaun"
                 android:entries="@array/clarity"
@@ -186,6 +187,7 @@
                 android:layout_width="@dimen/setting_yuan"
                 android:layout_height="@dimen/setting_yuan"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_below="@id/space3"
                 android:background="@drawable/xiaokongxinhuiyaun"/>
             <Space
@@ -230,6 +232,7 @@
                 android:layout_width="@dimen/setting_yuan"
                 android:layout_height="@dimen/setting_yuan"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_below="@id/space5"
                 android:background="@drawable/xiaokongxinhuiyaun"/>
             <Space

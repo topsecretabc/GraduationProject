@@ -54,7 +54,7 @@ public class MainInterfaceAdapter extends RecyclerView.Adapter<MainInterfaceAdap
         }
     }
     //构造函数，把要展示的数据源传进来，赋值给mainInterfaceList
-    public  MainInterfaceAdapter(List<String>titles,List<String>images,List<String>contids,Context context){//List<IntenetVideo.DataListBean.ContListBean> mainInterfaceList){
+    public  MainInterfaceAdapter(List<String>titles,List<String>images,List<String>contids,Context context){
         this.titles=titles;
         this.images=images;
         this.contids=contids;
@@ -69,33 +69,6 @@ public class MainInterfaceAdapter extends RecyclerView.Adapter<MainInterfaceAdap
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.main_interface, parent, false);
         final ViewHolder holder = new ViewHolder(view);
-
-        //给item设置点击事件
-//        final ViewHolder holder=new ViewHolder(view);
-//        holder.InternetVideoView.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                int position = holder.getAdapterPosition();
-//                Intent intent_PlayVideo = new Intent(context, PlayLocalVideoActivity.class);
-//                Bundle bundle = new Bundle();
-//                bundle.putString("video", contids.get(position));
-//                intent_PlayVideo.putExtras(bundle);
-//                context.startActivity(intent_PlayVideo);
-        //----------------------------------------------------------------
-//                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(AdapterView<?> parent, View view, int position,
-//                                            long id) {
-//                        Intent intent_PlayVideo = new Intent(LocalVideoActivity.this, PlayLocalVideoActivity.class);
-//                        Bundle bundle = new Bundle();
-//                        bundle.putSerializable("video", listVideos.get(position));
-//                        intent_PlayVideo.putExtras(bundle);
-//                        startActivity(intent_PlayVideo);
-//                    }
-//                });
-//            }
-//        });
-        //-----------------------------------------------------------
         if (mOnItemClickListener != null) {
             //为ItemView设置监听器
             holder.itemView.setOnClickListener(new View.OnClickListener() {

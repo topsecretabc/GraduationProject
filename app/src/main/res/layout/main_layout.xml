@@ -5,16 +5,18 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/main_swipe"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/main_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="?attr/actionBarSize"
             />
-    </LinearLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

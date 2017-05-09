@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.licong.graduationproject.R;
 
@@ -38,7 +40,7 @@ public class SettingActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black);
         }
-        //进行设置的操作
+        //帮助和关于的跳转按钮
         inSetting();
     }
     //加入返回主菜单的图标
@@ -62,9 +64,28 @@ public class SettingActivity extends AppCompatActivity {
         return true;
     }
     public void inSetting(){
-        //
+        //去帮助的按钮
+        Button to_help=(Button)findViewById(R.id.help_setting);
+        to_help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_help=new Intent(SettingActivity.this,HelpActivity.class);
+                startActivity(intent_help);
+                finish();
+            }
+        });
+        //去关于的按钮
+        Button to_about=(Button)findViewById(R.id.about_setting);
+        to_help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_about=new Intent(SettingActivity.this,AboutActivity.class);
+                startActivity(intent_about);
+                finish();
+            }
+        });
 
-    };
+    }
 
 }
 

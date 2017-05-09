@@ -8,6 +8,7 @@ import android.os.Message;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,24 +46,32 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    //下拉刷新控件
+    private SwipeRefreshLayout swipeRefreshLayout;
     //侧滑控件
     private DrawerLayout mDrawerLayout;
     //标题的集合
-    List<String> titles = new ArrayList<>();
+   private List<String> titles = new ArrayList<>();
     //标题的集合
-    List<String> images = new ArrayList<>();
+    private List<String> images = new ArrayList<>();
     //标题的集合
-    List<String> contids = new ArrayList<>();
-    //收到一个消息告诉主线程json字符串已经解析完，进行下一步将mainInterface放入适配器中
-    Handler handler=new Handler(){
+   private List<String> contids = new ArrayList<>();
+    private MainInterfaceAdapter mainInterfaceAdapter;
+
+    private RecyclerView recyclerView;
+    //侧滑菜单
+    private NavigationView mNavigationView;
+    //
+    private IntenetVideo mVideolist ;
+
+    //收到一个消息
+    // json字符串已经解析完，进行下一步将mainInterface放入适配器中
+   Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what){
                 case 1:
-                    MainInterfaceAdapter mainInterfaceAdapter = new MainInterfaceAdapter(titles,images,contids,MainActivity.this);
-
-//-------------------------------------------------------------------------------------
                     mainInterfaceAdapter.setOnItemClickListener(new MainInterfaceAdapter.OnItemClickListener() {
                         //主界面item的点击事件，跳转到video界面同时将contid（视频id）传过去
                         @Override
@@ -71,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             Intent intent_PlayVideo = new Intent(MainActivity.this, VideoActivity.class);
                             Bundle bundle = new Bundle();
                             bundle.putString("video", contids.get(position));
+
                             intent_PlayVideo.putExtras(bundle);
                             startActivity(intent_PlayVideo);
                         }
@@ -86,22 +96,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             startActivity(intent_PlayVideo);
                         }
                     });
-                    //-------------------------------------------------------------------------------
-                    recyclerView.setAdapter(mainInterfaceAdapter);
                     break;
             }
-
+            //item内容刷新，强制改变
+            mainInterfaceAdapter.notifyDataSetChanged();
         }
     };
-
-    private RecyclerView recyclerView;
-    //侧滑菜单
-    private NavigationView mNavigationView;
-    //
-    private IntenetVideo mVideolist ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
         recyclerView = (RecyclerView) findViewById(R.id.main_recycler);
@@ -114,16 +116,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 new StaggeredGridLayoutManager(3
                         , StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-//        使得图片不到处滑动
-        layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
+        //先是空的，然后获取数据后上面hundler中的mainInterfaceAdapter.notifyDataSetChanged()来刷新界面
+        mainInterfaceAdapter =new  MainInterfaceAdapter(titles,images,contids,this);
+        recyclerView.setAdapter(mainInterfaceAdapter);
+        //下拉刷新
+        swipeRefreshLayout= (SwipeRefreshLayout) findViewById(R.id.main_swipe);
+        //刷新转的那个的颜色
+        swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                //获取数据
+                                sendRequestWithOkHttp();
+                                //关闭转的那个
+                                swipeRefreshLayout.setRefreshing(false);
+                            }
+                        });
 
+            }
+        });
+
+        //使得图片不到处滑动
+        layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
         //网络请求
         sendRequestWithOkHttp();
         //设置欢迎界面打开与否
         welcome();
         //初始化整个主界面
         initFace();
+
     }
+
     //初始化toorbar
     public void initFace(){
         //得到Toolbar的实例传入setSupportActionBar()
@@ -143,10 +169,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.list_icn_mng);
         }
-        //将nav_header布局渲染进来
-        //  View view=LayoutInflater.from(this).inflate(R.layout.nav_header,mDrawerLayout,false);
-        //   mAvatar = (CircleImageView)view.findViewById(R.id.nav_header_image);
-
     }
 //    用HttpURLConnection的方法做网络请求的方法
 //    private void sendRequestWithHttpURLConnection() {
@@ -252,7 +274,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 contids.add(contid);
                 String title = mVideolist.getDataList().get(i).getContList().get(b).getName();
                 titles.add(title);
-               // Log.e("licong","aaa"+titles);
+                Log.e("licong","aaa"+titles);
                 String image = mVideolist.getDataList().get(i).getContList().get(b).getPic();
                 images.add(image);
 
@@ -261,29 +283,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //发送一个消息告诉主线程json字符串已经解析完
         handler.sendEmptyMessage(1);
     }
-
-//                05-05 16:46:22.522 21385-21781/com.licong.graduationproject E/lciong: aaaaa1052276
-//                05-05 16:46:22.522 21385-21781/com.licong.graduationproject E/lciong: aaaaa1071092
-//                05-05 16:46:22.522 21385-21781/com.licong.graduationproject E/lciong: aaaaa1074991
-//                05-05 16:46:22.522 21385-21781/com.licong.graduationproject E/lciong: aaaaa1073806
-//                05-05 16:46:22.522 21385-21781/com.licong.graduationproject E/lciong: aaaaa1073926
-//                05-05 16:46:22.522 21385-21781/com.licong.graduationproject E/lciong: aaaaa1074852
-//                05-05 16:46:22.522 21385-21781/com.licong.graduationproject E/lciong: aaaaa1074760
-//                05-05 16:46:22.522 21385-21781/com.licong.graduationproject E/lciong: aaaaa1074645
-//                05-05 16:46:22.522 21385-21781/com.licong.graduationproject E/lciong: aaaaa1074708
-
-//        mImagelist =gson.fromJson(jsonData,InternetEntity.class);
-//        for(int i=0;i<mImagelist.getItemList().size();i++){
-//            String image = mImagelist.getItemList().get(i).getData().getCover().getFeed();
-//            images.add(image);
-//        }
-//        Gson gson = new Gson();
-//        List<App> appList = gson.fromJson(jsonData, new TypeToken<List<App>>() {}.getType());
-//        for (IntenetVideo.DataListBean.ContListBean app : jsonBean) {
-//            Log.d("MainActivity", "id is " + app.getContId());
-//            Log.d("MainActivity", "name is " + app.getName());
-//        }
-//        }
 
 
     //设置头像的跳转事件
