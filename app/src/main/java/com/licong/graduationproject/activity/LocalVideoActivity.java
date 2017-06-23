@@ -175,7 +175,7 @@ public class LocalVideoActivity extends Activity {
     public void onBackPressed() {
         Intent intent_main = new Intent(LocalVideoActivity.this,MainActivity.class);
         LocalVideoActivity.this.startActivity(intent_main);
-        finish();
+        android.os.Process.killProcess(android.os.Process.myPid());
         //别加super.onBackPressed();不然又去调用默认的back处理方式了
     }
 }

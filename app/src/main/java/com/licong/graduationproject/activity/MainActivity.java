@@ -362,4 +362,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onDestroy() {
         super.onDestroy();
     }
+//  @Override
+//public void onBackPressed() {
+//
+//      MyApplication.getInstance().exit();
+//}
 }
